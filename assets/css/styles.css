@@ -1,0 +1,119 @@
+@import url('http://fonts.cdnfonts.com/css/super-mario-bros-alphabet');
+
+/********************************* GENERAL ***/
+
+*{
+    margin:0;
+    border:0;
+    padding:0;
+}
+
+body {
+    font-family: 'Super Mario Bros Alphabet', sans-serif;
+    color:#303956;
+
+}
+
+a {
+    color:inherit;
+    text-decoration: none;
+}
+
+/********************************* HEADINGS ***/
+
+h2 {
+    color:pink;
+    font-family: 'Super Mario Bros Alphabet', sans-serif;
+}
+
+.game-heading {
+    height:60vh;
+}
+
+.game-heading h2 {
+    font-size:10rem;
+    text-align:center;
+    margin:0 auto;
+    padding:20px 0;
+}
+
+.hs-heading {
+    text-align:center;
+    margin:0 auto;
+    padding:20px 0;   
+}
+
+.game-area-top {
+    height:30vh;
+    width:100%;
+    background-color:grey;
+}
+
+.game-area-top h2 {
+    text-align:center;
+    font-size:8rem;
+    margin:5px 0;
+}
+
+/********************************* GAME MODES ***/
+
+.game-menu{
+    width:60%;
+    margin:0 auto;
+    background-color:grey;
+    height:40vh;
+}
+
+.game-options {
+    height:10vh;
+    border:1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    line-height:10vh;
+    font-size:2rem;
+}
+
+/********************************* GAME BACKGROUNDS ***/
+
+.menu-background {
+    background-image: url("assets/images/romeo-a-9g11WIv0Ias-unsplash.jpg");
+    height:100vh;
+    width:100%;
+}
+
+
+/********************************* HYPERLINK STYLES ***/
+
+.hs-heading a {
+    text-decoration: none;
+    color:inherit;
+}
+
+/********************************* GAME AREA ***/
+
+.game-info {
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+.game-titles {
+    font-size:5rem;
+    padding:0 10px;
+
+}
+
+.game-area {
+    display:grid;
+    grid-template-columns: repeat(4, auto);
+    margin-top:10px;
+    justify-content: center;
+}
+
+.card {
+    background-color:black;
+    height:160px;
+    width:100px;
+    margin:10px 10px;
+}
+
