@@ -111,15 +111,21 @@ h2 {
 }
 
 .card {
-    background-image:url("../images/1368664.jpg");
+    /*background-image:url("../images/1368664.jpg");
     background-repeat:no-repeat;
-    background-position:center;
+    background-position:center;*/
     height:160px;
     width:100px;
     margin:10px 10px;
 }
 
 .card .card-back {
-    /*background-image:url("../images/1368664.jpg")*/
+    background-image:url("../images/1368664.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
+    height:160px;
+    width:100px;
 }
+
+
 
