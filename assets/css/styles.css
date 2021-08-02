@@ -76,7 +76,7 @@ h2 {
 /********************************* GAME BACKGROUNDS ***/
 
 .menu-background {
-    background-image: url("assets/images/romeo-a-9g11WIv0Ias-unsplash.jpg");
+    background-image: url("../images/romeo-a-9g11WIv0Ias-unsplash (2).jpg");
     height:100vh;
     width:100%;
 }
@@ -111,9 +111,15 @@ h2 {
 }
 
 .card {
-    background-color:black;
+    background-image:url("../images/1368664.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
     height:160px;
     width:100px;
     margin:10px 10px;
+}
+
+.card .card-back {
+    /*background-image:url("../images/1368664.jpg")*/
 }
 
