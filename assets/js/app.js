@@ -15,5 +15,21 @@ function startGame() {
     timer = --;
 }
 
+function startGame()
+
+function flipCard()
+
+function checkCards()
+
+function increaseScore()
+
+function increaseFlip()
+
+function timer()
+
+function victory()
+
+function gameOver()
+
 
 
