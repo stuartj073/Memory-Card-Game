@@ -118,6 +118,7 @@ h2 {
     background-color:black;
     height:160px;
     width:110px;
+    /*background:url("assets/images/1368664.jpg") no-repeat no-repeat center;*/
 }
 
 .card {
@@ -125,8 +126,9 @@ h2 {
     background-repeat:no-repeat;
     background-position:center;*/
     height:150px;
-    width:110px;
+    width:120px;
     margin:10px 10px;
+    border: 1px solid #777777;
 }
 
 /*.card .card-back {

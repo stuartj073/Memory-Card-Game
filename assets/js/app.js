@@ -1,27 +1,15 @@
+const userScore = 0;
+const flips = 0;
+// const timeLeft = 100;
+const card = document.getElementsByClassName('card');
+
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function(){
         console.log("Hi")
+        console.log(this);
+        timer();
     })
 }
-
-function consoleTest(){
-    let score = document.getElementById("score");
-
-    score.addEventListener('click', function(){
-        console.log("bye");
-    })
-}
-
-const cards = document.querySelector(".card");
-
-function hi(){
-    let scores = document.getElementById('score');
-
-    score.addEventListener('click', function(){
-        alert("uh")
-    })
-}
-
 
 function shuffleCards(cards){
     // using the Fisher Yates shuffle theory
@@ -52,18 +40,19 @@ $("#game-rules").click(function(){
     ("button").slideToggle("slow");
  })
 
-function startGame()
+function startGame(){
 
-function flipCard(){
-    let cards = document.getElementsByClassName('card');
-    for(let i = 0; i< cards.length; i++){
-        cards[i].addEventListener('click', function(){
-            cards.toggle.classList.remove('card-front').clasList.add('card-back')
-        })
-    }
 }
 
-let cards = document.getElementsByClassName('card')
+function flipCard(){
+    card.addEventListener('click', function(){
+        console.log("hi");
+    })
+}
+
+function flipCard(){
+
+}
 
 function checkCards() {
     for(card of cards) {
@@ -84,7 +73,9 @@ function matchedCards(cards1, cards2){
 
 }
 
-function unmatchedCards()
+function unmatchedCards(){
+
+}
 
 function increaseScore(){
     let score = document.getElementById('score').innerHTML;
@@ -97,24 +88,29 @@ function increaseScore(){
     }
 }
 
-function increaseFlip()
+function increaseFlip(){
+
+}
 
 function timer(){
     setInterval(function(){
-        let timer = document.getElementById('time').innerText;
-        this.timer--;
-        timer = this.timer.innerText;
-
-        if(timer===0){
-            gameOver();
+        let totalTime = document.getElementById('time');
+        let timeLeft = totalTime.innerText--;
+        
+        if(timeLeft.innerText === "0"){
+            this.gameOver()
         }
-    },1000)
+    }, 1000)
+
 }
 
-function victory()
-
 function gameOver(){
-    
+    clearInterval(timer);
+    console.log("game over");
+}
+
+function victory(){
+
 }
 
 function menuToggle(){
