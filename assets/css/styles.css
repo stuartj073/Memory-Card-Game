@@ -97,7 +97,6 @@ h2 {
 .game-info {
     display:flex;
     justify-content: space-between;
-    
 }
 
 .game-titles {
@@ -129,24 +128,31 @@ h2 {
     width:120px;
     margin:10px 10px;
     border: 1px solid #777777;
+    background-color:white;
+    position:relative;
 }
 
-/*.card .card-back {
-    background-image:url("../images/1368664.jpg");
-    background-repeat:no-repeat;
-    background-position:center;
-    height:160px;
-    width:100px;
-}
-*/
-
-.card:hover .visible .card-front {
-    transform: rotateY("180");
+.card:active {
+    transform:scale(.95);
 }
 
-.card:hover .visible .card-back {
+.card:hover .front {
+    transform: rotateY(-180);
+}
+
+.card:hover .back {
     transform: rotateY(0);
 }
+
+.card.front.back {
+    top:0;
+    left:0;
+    height:150px;
+    width:120px;
+    position:absolue;
+    backface-visibility: hidden
+}
+
 
 /********************************* MEDIA QUERIES ***/
 

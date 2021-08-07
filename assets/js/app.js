@@ -1,14 +1,40 @@
 const userScore = 0;
-const flips = 0;
-// const timeLeft = 100;
-const card = document.getElementsByClassName('card');
+const matchedCards = [];
+const cards = document.getElementsByClassName('card');
+const timeRemaining = setInterval(timer, 1000)
+const divs = document.querySelectorAll('div')
+
+function flipUp(){
+    let flips = document.getElementById('flips');
+    flips.innerText = 0;
+    cards.forEach(card=>{
+        card.addEventListener('click', ()=>{
+            console.log("hi");
+            flips.innerText++;
+        })
+    })
+}
 
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function(){
         console.log("Hi")
         console.log(this);
-        timer();
+        startGame();
     })
+}
+
+function startGame(){
+    timer();
+}
+
+function timer(){
+    let totalTime = document.getElementById('time');
+    totalTime.innerHTML--;
+        
+    if(totalTime.innerHTML === "0"){
+        gameOver();
+        totalTime.innerHTMl = totalTime.innerHTML;
+    }
 }
 
 function shuffleCards(cards){
@@ -45,13 +71,10 @@ function startGame(){
 }
 
 function flipCard(){
-    card.addEventListener('click', function(){
+    let click = document.getElementById('front');
+    front.addEventListener('click', function(){
         console.log("hi");
     })
-}
-
-function flipCard(){
-
 }
 
 function checkCards() {
@@ -64,9 +87,8 @@ function unflipCards() {
 
 }
 
-function matchedCards(cards1, cards2){
-    var matchedCards = [];
-
+function correctMatch(cards1, cards2){
+    
     if(cards[0]===cards[1]){
         matchedCards.push(card1, card2)
     }
@@ -76,6 +98,8 @@ function matchedCards(cards1, cards2){
 function unmatchedCards(){
 
 }
+
+
 
 function increaseScore(){
     let score = document.getElementById('score').innerHTML;
@@ -88,29 +112,23 @@ function increaseScore(){
     }
 }
 
-function increaseFlip(){
-
+function click(){
+    let cards = Array.from(document.getElementsByClassName('card'));
+    let ticker = document.getElementById('flips');
+    cards.forEach(card=>{
+        card.addEventListener('click', function(){
+            ticker.innerHTML++;
+        })
+    })
 }
 
-function timer(){
-    setInterval(function(){
-        let totalTime = document.getElementById('time');
-        let timeLeft = totalTime.innerText--;
-        
-        if(timeLeft.innerText === "0"){
-            this.gameOver()
-        }
-    }, 1000)
-
-}
 
 function gameOver(){
-    clearInterval(timer);
+    clearInterval(timeRemaining);
     console.log("game over");
 }
 
 function victory(){
-
 }
 
 function menuToggle(){
@@ -118,6 +136,3 @@ function menuToggle(){
         $(".game-rules").toggleClass();
     })
 }
-
-
-
