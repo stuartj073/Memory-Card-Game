@@ -1,19 +1,10 @@
 const userScore = 0;
 const matchedCards = [];
-const cards = document.getElementsByClassName('card');
+// const cards = Array.from(document.getElementsByClassName('card'));
 const timeRemaining = setInterval(timer, 1000)
 const divs = document.querySelectorAll('div')
+const flipCount = document.getElementById('flips')
 
-function flipUp(){
-    let flips = document.getElementById('flips');
-    flips.innerText = 0;
-    cards.forEach(card=>{
-        card.addEventListener('click', ()=>{
-            console.log("hi");
-            flips.innerText++;
-        })
-    })
-}
 
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function(){
@@ -36,6 +27,18 @@ function timer(){
         totalTime.innerHTMl = totalTime.innerHTML;
     }
 }
+
+function flipUp(){
+    let cards = Array.from(document.getElementsByClassName('card'));
+    for(let i=0;i<cards.length;i++){
+    cards[i].addEventListener('click', ()=>{
+        flips.innerText++;
+        console.log("oh");
+    })
+    }
+}
+
+document.addEventListener('click', flipUp());
 
 function shuffleCards(cards){
     // using the Fisher Yates shuffle theory
