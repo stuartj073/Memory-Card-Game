@@ -141,6 +141,7 @@ h2 {
 
 .card.flipC {
     transform:rotateY(180deg)
+    
 } 
 
 .card:active {

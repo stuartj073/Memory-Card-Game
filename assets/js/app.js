@@ -11,7 +11,6 @@ const back = Array.from(document.getElementsByClassName('back'));
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function(){
         console.log("Hibye")
-        console.log(this);
         startGame();
     })
 }
@@ -20,6 +19,7 @@ function startGame(){
     pairedCards = [];
     timer();
     flipCount();
+    shuffleCards();
 }
 
 function timer(){
@@ -41,26 +41,22 @@ function flipCount(){
     }
 }
 
-function shuffleCards(cards){
-    // using the Fisher Yates shuffle theory
-  
-      
-      var currentIndex = cards.Array.length,  randomIndex;
-    
-      // While there remain elements to shuffle...
-      while (0 !== currentIndex) {
-    
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-    
-        // And swap it with the current element.
-        [cards.Array[currentIndex], cards.Array[randomIndex]] = [
-        cards.Array[randomIndex], cards.Array[currentIndex]];
-      }
-    
-      return cards.Array;
-  }
+// function shuffleCards(){
+//     // using the Fisher Yates shuffle theory
+//     console.log("j")
+//     for(let i = cards.length - 1; i<0; i--){
+//         let randN = Math.floor(Math.random()*(i+1));
+//         cards[randN].style.order = i;
+//         cards[i].style.order = randN;
+//     }
+// }
+
+function shuffleCards(){
+    for(let i=0;i<cards.length;i++){
+        randN = Math.floor(Math.random()*(i+1));
+        cards[i].style.order = randN;
+    }
+}
 
 function toggleRules(){
 console.log("hello");
