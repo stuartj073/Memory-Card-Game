@@ -1,5 +1,5 @@
-/*@import url('http://fonts.cdnfonts.com/css/super-mario-bros-alphabet');*/
-@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('http://fonts.cdnfonts.com/css/super-mario-bros-alphabet');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
 /********************************* GENERAL ***/
 
@@ -10,8 +10,8 @@
 }
 
 body {
-    /*font-family: 'Super Mario Bros Alphabet', sans-serif;*/
-    font-family: 'Italiana', serif;
+    font-family: 'Super Mario Bros Alphabet', sans-serif;
+    /*font-family: 'Italiana', serif;*/
     color:#303956;
 
 }
@@ -25,8 +25,8 @@ a {
 
 h2 {
     color:pink;
-    font-family: 'Italiana', serif;
-    /*font-family: 'Super Mario Bros Alphabet', sans-serif;*/
+    /*font-family: 'Italiana', serif;*/
+    font-family: 'Super Mario Bros Alphabet', sans-serif;
 }
 
 .game-heading {
@@ -110,7 +110,7 @@ h2 {
     grid-template-columns: repeat(4, auto);
     margin-top:10px;
     justify-content: center;
-    height:900px;
+    perspective:2000px;
 }
 
 .card-back {
@@ -130,22 +130,22 @@ h2 {
     border: 1.5px solid #777777;
     background-color:white;
     position:relative;
-    perspective: 1000px;
+    transform-style:preserve-3d;
+    transition: transform.5s;
 }
+
+.front {
+    transform:rotateY(180deg);
+}
+
+
+.card.flipC {
+    transform:rotateY(180deg)
+} 
 
 .card:active {
     transform:scale(.95);
     transition: transform .2s;
-}
-
-.card .front {
-    transform: rotateY(180deg);
-    transition:.5s ease-in-out;
-}
-
-.card .back {
-    transform: rotateY(0);
-    
 }
 
 .front, .back {
@@ -188,6 +188,4 @@ h2 {
         margin:25px;
 
     }
-
-
 }

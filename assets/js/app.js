@@ -2,20 +2,22 @@ const userScore = 0;
 const matchedCards = [];
 const cards = Array.from(document.getElementsByClassName('card'));
 const timeRemaining = setInterval(timer, 1000)
+const front = Array.from(document.getElementsByClassName('front'));
+const back = Array.from(document.getElementsByClassName('back'));
 
 
 
 
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function(){
-        console.log("Hi")
+        console.log("Hibye")
         console.log(this);
         startGame();
     })
 }
 
 function startGame(){
-    paireCards = [];
+    pairedCards = [];
     timer();
     flipCount();
 }
@@ -33,12 +35,9 @@ function timer(){
 function flipCount(){
     let cards = Array.from(document.getElementsByClassName('card'));
     for(let i=0;i<cards.length;i++){
-    cards[i].addEventListener('click', ()=>{
-        flips.innerText++;
-        console.log("oh");
-        flipCard();
-    })
-    
+        cards[i].addEventListener('click', ()=>{
+            flips.innerText++;
+        })
     }
 }
 
@@ -57,7 +56,7 @@ function shuffleCards(cards){
     
         // And swap it with the current element.
         [cards.Array[currentIndex], cards.Array[randomIndex]] = [
-          cards.Array[randomIndex], cards.Array[currentIndex]];
+        cards.Array[randomIndex], cards.Array[currentIndex]];
       }
     
       return cards.Array;
@@ -72,22 +71,11 @@ $("#game-rules").click(function(){
  })
 
 function flipCard(){
-        let cards = Array.from(document.getElementsByClassName('card'));
-        let back = Array.from(document.getElementsByClassName('back'));
-        let front = Array.from(document.getElementsByClassName('front'));
-
-        for(let i = 0; i<cards.length; i++){
-        cards.classList.remove('back');
-        cards.classList.add('front');
-        console.log("uh")
-    }
+    this.classList.toggle('flipC')
+    console.log(this);
 }
 
-function checkCards() {
-    for(card of cards) {
-        card.addEventListener('click', flipCard())
-    }
-}
+cards.forEach(card=>card.addEventListener('click', flipCard))
 
 function unflipCards() {
 
@@ -118,15 +106,15 @@ function increaseScore(){
     }
 }
 
-function click(){
-    let cards = Array.from(document.getElementsByClassName('card'));
-    let ticker = document.getElementById('flips');
-    cards.forEach(card=>{
-        card.addEventListener('click', function(){
-            ticker.innerHTML++;
-        })
-    })
-}
+// function click(){
+//     let cards = Array.from(document.getElementsByClassName('card'));
+//     let ticker = document.getElementById('flips');
+//     cards.forEach(card=>{
+//         card.addEventListener('click', function(){
+//             ticker.innerHTML++;
+//         })
+//     })
+// }
 
 
 function gameOver(){
