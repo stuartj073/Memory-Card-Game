@@ -1,9 +1,9 @@
 const userScore = 0;
 const matchedCards = [];
-// const cards = Array.from(document.getElementsByClassName('card'));
+const cards = Array.from(document.getElementsByClassName('card'));
 const timeRemaining = setInterval(timer, 1000)
-const divs = document.querySelectorAll('div')
-const flipCount = document.getElementById('flips')
+
+
 
 
 if(document.readyState === "loading") {
@@ -15,30 +15,32 @@ if(document.readyState === "loading") {
 }
 
 function startGame(){
+    paireCards = [];
     timer();
+    flipCount();
 }
 
 function timer(){
     let totalTime = document.getElementById('time');
     totalTime.innerHTML--;
-        
+    
     if(totalTime.innerHTML === "0"){
-        gameOver();
-        totalTime.innerHTMl = totalTime.innerHTML;
+    gameOver();
+    totalTime.innerHTMl = totalTime.innerHTML;
     }
 }
 
-function flipUp(){
+function flipCount(){
     let cards = Array.from(document.getElementsByClassName('card'));
     for(let i=0;i<cards.length;i++){
     cards[i].addEventListener('click', ()=>{
         flips.innerText++;
         console.log("oh");
+        flipCard();
     })
+    
     }
 }
-
-document.addEventListener('click', flipUp());
 
 function shuffleCards(cards){
     // using the Fisher Yates shuffle theory
@@ -69,15 +71,16 @@ $("#game-rules").click(function(){
     ("button").slideToggle("slow");
  })
 
-function startGame(){
-
-}
-
 function flipCard(){
-    let click = document.getElementById('front');
-    front.addEventListener('click', function(){
-        console.log("hi");
-    })
+        let cards = Array.from(document.getElementsByClassName('card'));
+        let back = Array.from(document.getElementsByClassName('back'));
+        let front = Array.from(document.getElementsByClassName('front'));
+
+        for(let i = 0; i<cards.length; i++){
+        cards.classList.remove('back');
+        cards.classList.add('front');
+        console.log("uh")
+    }
 }
 
 function checkCards() {
