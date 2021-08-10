@@ -4,12 +4,15 @@ const cards = Array.from(document.getElementsByClassName('card'));
 const timeRemaining = setInterval(timer, 1000)
 const front = Array.from(document.getElementsByClassName('front'));
 const back = Array.from(document.getElementsByClassName('back'));
+let card1;
+let card2;
+let hasFlippedCard = false;
 
 
 
 
 if(document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener("DOMContentLoaded", ()=>{
         console.log("Hibye")
         startGame();
     })
@@ -67,9 +70,32 @@ $("#game-rules").click(function(){
  })
 
 function flipCard(){
-    this.classList.toggle('flipC')
-    console.log(this);
+    this.classList.add('flipC')
+    var card1, card2;
+
+    if(!hasFlippedCard){
+        hasFlippedCard = true;
+        let card1 = this;
+        
+    }   else {
+        hasFlippedCard = false;
+        let card2 = this;
+    }
+        if(card1.dataset.framework === card2.dataset.framework){
+            card1.removeEventListener('click', flipCard)
+            card2.removeEventListener('click', flipCard)
+        }   else {
+            setTimeout(function(){
+            card1.classList.remove('flip')
+            card2.classList.remove('flip');
+            }, 1000);
+        }
+
+        console.log("huzzah")
 }
+    
+
+// function canFlip(card)
 
 cards.forEach(card=>card.addEventListener('click', flipCard))
 
