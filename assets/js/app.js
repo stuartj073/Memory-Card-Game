@@ -6,7 +6,8 @@ const front = Array.from(document.getElementsByClassName('front'));
 const back = Array.from(document.getElementsByClassName('back'));
 let card1;
 let card2;
-let hasFlippedCard = false;
+this.busy = true;
+
 
 
 
@@ -72,30 +73,36 @@ $("#game-rules").click(function(){
 function flipCard(){
     this.classList.add('flipC')
     var card1, card2;
-
-    if(!hasFlippedCard){
-        hasFlippedCard = true;
-        let card1 = this;
-        
-    }   else {
-        hasFlippedCard = false;
-        let card2 = this;
-    }
-        if(card1.dataset.framework === card2.dataset.framework){
-            card1.removeEventListener('click', flipCard)
-            card2.removeEventListener('click', flipCard)
-        }   else {
-            setTimeout(function(){
-            card1.classList.remove('flip')
-            card2.classList.remove('flip');
-            }, 1000);
-        }
-
-        console.log("huzzah")
+    let hasFlippedCard = false;
+    console.log("huzzah")
 }
+
+    
+    // if(!hasFlippedCard){
+    //     hasFlippedCard = true;
+    //     let card1 = this;
+        
+    // }   else {
+    //     hasFlippedCard = false;
+    //     let card2 = this;
+    // }
+    //     if(card1.dataset.framework === card2.dataset.framework){
+    //         card1.removeEventListener('click', flipCard)
+    //         card2.removeEventListener('click', flipCard)
+    //     }   else {
+    //         setTimeout(function(){
+    //         card1.classList.remove('flip')
+    //         card2.classList.remove('flip');
+    //         }, 1000);
+    //     }
+
+        
+
     
 
-// function canFlip(card)
+// function canFlipCard(card){
+//     if(!this.busy && this.card.includes)
+// }
 
 cards.forEach(card=>card.addEventListener('click', flipCard))
 
