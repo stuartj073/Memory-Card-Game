@@ -2,10 +2,7 @@ const userScore = 0;
 const matchedCards = [];
 const cards = Array.from(document.getElementsByClassName('card'));
 const timeRemaining = setInterval(timer, 1000)
-const front = Array.from(document.getElementsByClassName('front'));
-const back = Array.from(document.getElementsByClassName('back'));
-let card1;
-let card2;
+
 this.busy = true;
 
 
@@ -70,12 +67,53 @@ $("#game-rules").click(function(){
     ("button").slideToggle("slow");
  })
 
-function flipCard(){
-    this.classList.add('flipC')
-    var card1, card2;
-    let hasFlippedCard = false;
-    console.log("huzzah")
+//  function flipCard(){
+//     this.classList.add('flipC');
+//     let firstClick;
+//     let secondClick;
+// }
+
+ 
+ let firstCard;
+ let secondCard;
+ let hasFlippedCard = false;
+
+ function flipCard(){
+    this.classList.add('flipC');
+     
+     if(!hasFlippedCard){
+        hasFlippedCard = true;
+        firstCard = this;
+        console.log(this.childNodes[1].src);
+
+    } else {
+        hasFlippedCard = false;
+        secondCard = this;
+        console.log(this.childNodes[1].src);
+        let gamerScore = document.getElementById('score')
+
+        if(firstCard.childNodes[1].src === secondCard.childNodes[1].src){
+            this.removeEventListener('click', flipCount)
+            firstCard.removeEventListener('click', flipCard);
+            secondCard.removeEventListener('click', flipCard);
+            console.log("Match!")
+            const newScore = parseInt(gamerScore.innerHTML) + 10;
+            gamerScore.innerHTML = newScore;
+
+            
+        } else {
+            setTimeout(()=>{
+                firstCard.classList.remove('flipC');
+                secondCard.classList.remove('flipC');
+                console.log("the en word");
+            }, 1000);
+        }
+        console.log("yeu")
+    }
 }
+
+
+cards.forEach(card=>card.addEventListener('click', flipCard))
 
     
     // if(!hasFlippedCard){
@@ -104,7 +142,7 @@ function flipCard(){
 //     if(!this.busy && this.card.includes)
 // }
 
-cards.forEach(card=>card.addEventListener('click', flipCard))
+
 
 function unflipCards() {
 
