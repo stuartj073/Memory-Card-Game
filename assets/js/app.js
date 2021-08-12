@@ -1,10 +1,8 @@
 const userScore = 0;
-const matchedCards = [];
 const cards = Array.from(document.getElementsByClassName('card'));
 const timeRemaining = setInterval(timer, 1000)
-
 this.busy = true;
-
+let stars = Array.from(document.getElementsByClassName('far fa-star'));
 
 
 
@@ -12,16 +10,17 @@ this.busy = true;
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", ()=>{
         console.log("Hibye")
-        startGame();
+        setTimeout(startGame(), 5000)
     })
 }
 
 function startGame(){
-    pairedCards = [];
+    // timeRemaining = flips.innerHTML;
     timer();
     flipCount();
     shuffleCards();
 }
+
 
 function timer(){
     let totalTime = document.getElementById('time');
@@ -38,9 +37,19 @@ function flipCount(){
     for(let i=0;i<cards.length;i++){
         cards[i].addEventListener('click', ()=>{
             flips.innerText++;
-        })
+            correctMatch = flips.innerText;
+            if(flips.innerHTML > "1"){
+                console.log("uh")
+        });
+        let stars = Array.from(document.getElementsByClassName('far fa-star'));
+        
+        if(flips.innerHTML > "1"){
+            console.log("uh")
+            
+        }
     }
 }
+
 
 // function shuffleCards(){
 //     // using the Fisher Yates shuffle theory
@@ -78,6 +87,7 @@ $("#game-rules").click(function(){
  let secondCard;
  let hasFlippedCard = false;
  let lock = false;
+ let matchedCards = [];
 
  function flipCard(){
     if(lock) return;
@@ -104,21 +114,6 @@ $("#game-rules").click(function(){
     }
 }
 
-function canFlipCard(){
-    if(!this.busy && !this.card.includes(correctMatch) && !this.card){
-    console.log("wagwan")
-    }
-}
-
-cards.forEach(card=>card.addEventListener('click', flipCard))
-
-function correctMatch(){
-    this.removeEventListener('click', flipCount)
-    firstCard.removeEventListener('click', flipCard);
-    secondCard.removeEventListener('click', flipCard);
-    console.log("Match!")
-}
-
 function incorrectMatch(){
     lock = true;
     
@@ -131,6 +126,22 @@ function incorrectMatch(){
     lock = false;
 }
 
+function canFlipCard(){
+    if(!this.busy && !this.card.includes(correctMatch) && !this.card){
+    console.log("wagwan")
+    }
+}
+
+cards.forEach(card=>card.addEventListener('click', flipCard))
+
+function correctMatch(){
+    firstCard.removeEventListener('click', flipCard);
+    firstCard.removeEventListener('click', flipCount);
+    secondCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCount);
+}
+
+
 function increaseScore(){
     let gamerScore = document.getElementById('score')
     const newScore = parseInt(gamerScore.innerHTML) + 10;
@@ -141,7 +152,7 @@ function gameOver(){
     clearInterval(timeRemaining);
     console.log("game over");
     let game = document.getElementsByClassName('game-area');
-    game.toggleClass('game-over-overlay');
+    // game.toggleClass('game-over-overlay');
 }
 
 // function victory(){
