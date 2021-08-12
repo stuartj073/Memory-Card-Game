@@ -77,120 +77,76 @@ $("#game-rules").click(function(){
  let firstCard;
  let secondCard;
  let hasFlippedCard = false;
+ let lock = false;
 
  function flipCard(){
+    if(lock) return;
     this.classList.add('flipC');
-     
-     if(!hasFlippedCard){
+    
+    if(!hasFlippedCard){
         hasFlippedCard = true;
         firstCard = this;
         console.log(this.childNodes[1].src);
-
-    } else {
+    }else {
         hasFlippedCard = false;
         secondCard = this;
         console.log(this.childNodes[1].src);
-        let gamerScore = document.getElementById('score')
-
+        
         if(firstCard.childNodes[1].src === secondCard.childNodes[1].src){
-            this.removeEventListener('click', flipCount)
-            firstCard.removeEventListener('click', flipCard);
-            secondCard.removeEventListener('click', flipCard);
-            console.log("Match!")
-            const newScore = parseInt(gamerScore.innerHTML) + 10;
-            gamerScore.innerHTML = newScore;
-
+            correctMatch();
+            increaseScore();
+            matchedCards.push(firstCard, secondCard);
             
         } else {
-            setTimeout(()=>{
-                firstCard.classList.remove('flipC');
-                secondCard.classList.remove('flipC');
-                console.log("the en word");
-            }, 1000);
+            incorrectMatch()
         }
         console.log("yeu")
     }
 }
 
+function canFlipCard(){
+    if(!this.busy && !this.card.includes(correctMatch) && !this.card){
+    console.log("wagwan")
+    }
+}
 
 cards.forEach(card=>card.addEventListener('click', flipCard))
 
-    
-    // if(!hasFlippedCard){
-    //     hasFlippedCard = true;
-    //     let card1 = this;
-        
-    // }   else {
-    //     hasFlippedCard = false;
-    //     let card2 = this;
-    // }
-    //     if(card1.dataset.framework === card2.dataset.framework){
-    //         card1.removeEventListener('click', flipCard)
-    //         card2.removeEventListener('click', flipCard)
-    //     }   else {
-    //         setTimeout(function(){
-    //         card1.classList.remove('flip')
-    //         card2.classList.remove('flip');
-    //         }, 1000);
-    //     }
-
-        
-
-    
-
-// function canFlipCard(card){
-//     if(!this.busy && this.card.includes)
-// }
-
-
-
-function unflipCards() {
-
+function correctMatch(){
+    this.removeEventListener('click', flipCount)
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    console.log("Match!")
 }
 
-function correctMatch(cards1, cards2){
+function incorrectMatch(){
+    lock = true;
     
-    if(cards[0]===cards[1]){
-        matchedCards.push(card1, card2)
-    }
+    setTimeout(()=>{
+    firstCard.classList.remove('flipC');
+    secondCard.classList.remove('flipC');
+    console.log("iC");
+    }, 1000);
 
+    lock = false;
 }
-
-function unmatchedCards(){
-
-}
-
-
 
 function increaseScore(){
-    let score = document.getElementById('score').innerHTML;
-    score = [];
-
-    if(correctMatch) {
-        score ++;
-    }   else {
-        unflipCards()
-    }
+    let gamerScore = document.getElementById('score')
+    const newScore = parseInt(gamerScore.innerHTML) + 10;
+    gamerScore.innerHTML = newScore;
 }
-
-// function click(){
-//     let cards = Array.from(document.getElementsByClassName('card'));
-//     let ticker = document.getElementById('flips');
-//     cards.forEach(card=>{
-//         card.addEventListener('click', function(){
-//             ticker.innerHTML++;
-//         })
-//     })
-// }
-
 
 function gameOver(){
     clearInterval(timeRemaining);
     console.log("game over");
+    let game = document.getElementsByClassName('game-area');
+    game.toggleClass('game-over-overlay');
 }
 
-function victory(){
-}
+// function victory(){
+//     if(matchedCards)
+// }
 
 function menuToggle(){
     $("button").addEventListener('click',function(){
