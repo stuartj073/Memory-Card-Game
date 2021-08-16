@@ -4,24 +4,38 @@ const timeRemaining = setInterval(timer, 1000)
 this.busy = true;
 let stars = Array.from(document.getElementsByClassName('far fa-star'));
 
+ 
+let firstCard;
+let secondCard;
+let hasFlippedCard = false;
+let lock = false;
+let matchedCards = 0;
+let countFlippedCards = 0;
+ 
+cards.forEach(card=>card.addEventListener('click', flipCard))
 
 
 
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", ()=>{
         console.log("Hibye")
-        setTimeout(startGame(), 5000)
+        setTimeout(startGame(), 500000)
     })
 }
-
+ 
 function startGame(){
     // timeRemaining = flips.innerHTML;
     timer();
     flipCount();
+    resetGame();
     shuffleCards();
 }
 
-
+function resetGame(){
+    let matchedCards = 0;
+    let countFlippedCards = 0;
+}
+ 
 function timer(){
     let totalTime = document.getElementById('time');
     totalTime.innerHTML--;
@@ -31,134 +45,134 @@ function timer(){
     totalTime.innerHTMl = totalTime.innerHTML;
     }
 }
-
+ 
 function flipCount(){
+    if (lock) return;
     let cards = Array.from(document.getElementsByClassName('card'));
-    for(let i=0;i<cards.length;i++){
+        for(let i=0;i<cards.length;i++){
         cards[i].addEventListener('click', ()=>{
             flips.innerText++;
             correctMatch = flips.innerText;
-            if(flips.innerHTML > "1"){
-                console.log("uh")
-        });
+            
         let stars = Array.from(document.getElementsByClassName('far fa-star'));
-        
+
         if(flips.innerHTML > "1"){
             console.log("uh")
             
         }
+        });
     }
 }
-
-
-// function shuffleCards(){
-//     // using the Fisher Yates shuffle theory
-//     console.log("j")
-//     for(let i = cards.length - 1; i<0; i--){
-//         let randN = Math.floor(Math.random()*(i+1));
-//         cards[randN].style.order = i;
-//         cards[i].style.order = randN;
-//     }
-// }
-
+ 
 function shuffleCards(){
+    // assigning a random number to each card
+    // and then sorting the cards in order
+    // of this random number
     for(let i=0;i<cards.length;i++){
-        randN = Math.floor(Math.random()*(i+1));
+        randN = Math.round(Math.random()*(15));
+        console.log("number is",randN)
         cards[i].style.order = randN;
     }
 }
-
+ 
 function toggleRules(){
 console.log("hello");
 }
-
+ 
 $("#game-rules").click(function(){
     ("button").slideToggle("slow");
  })
-
+ 
 //  function flipCard(){
 //     this.classList.add('flipC');
 //     let firstClick;
 //     let secondClick;
 // }
 
- 
- let firstCard;
- let secondCard;
- let hasFlippedCard = false;
- let lock = false;
- let matchedCards = [];
+let done = [];
 
- function flipCard(){
+let flippedCard = false;
+
+function flipCard(){
+    // to flip cards
+    console.log("FlipCard  ", lock);
     if(lock) return;
+
+    // countFlippedCards++;
     this.classList.add('flipC');
-    
-    if(!hasFlippedCard){
-        hasFlippedCard = true;
+    if(!flippedCard){
+        // first card
+        flippedCard = true;
         firstCard = this;
-        console.log(this.childNodes[1].src);
+        firstCard.removeEventListener('click', flipCount);
+        
     }else {
-        hasFlippedCard = false;
+        // second card
+        flippedCard = false;
         secondCard = this;
-        console.log(this.childNodes[1].src);
+        // countFlippedCards++;
+        lock = true;
+        // check if cards match
         
         if(firstCard.childNodes[1].src === secondCard.childNodes[1].src){
-            correctMatch();
+            // correctMatch();
+            lock = false;
+            done.push(firstCard.childNodes[1].src);
+            done.push(secondCard.childNodes[1].src);
             increaseScore();
-            matchedCards.push(firstCard, secondCard);
+            matchedCards++;
             
+            if (matchedCards == 8){
+                victory()
+            }
+        
         } else {
-            incorrectMatch()
+            incorrectMatch();
+            firstCard.addEventListener('click', flipCard);
+            secondCard.addEventListener('click', flipCard);
         }
-        console.log("yeu")
     }
 }
 
+done.addEventListener('click', flipCard, flipCount);
+
+function correctMatch() {
+    // actions taken if cards match
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    console.log("match")
+}
+ 
 function incorrectMatch(){
     lock = true;
-    
     setTimeout(()=>{
     firstCard.classList.remove('flipC');
     secondCard.classList.remove('flipC');
     console.log("iC");
-    }, 1000);
-
     lock = false;
+    }, 1000);
+    // firstCard.addEventListener('click', flipCard);
+    // secondCard.addEventListener('click', flipCard);
 }
-
-function canFlipCard(){
-    if(!this.busy && !this.card.includes(correctMatch) && !this.card){
-    console.log("wagwan")
-    }
-}
-
-cards.forEach(card=>card.addEventListener('click', flipCard))
-
-function correctMatch(){
-    firstCard.removeEventListener('click', flipCard);
-    firstCard.removeEventListener('click', flipCount);
-    secondCard.removeEventListener('click', flipCard);
-    secondCard.removeEventListener('click', flipCount);
-}
-
-
+ 
 function increaseScore(){
     let gamerScore = document.getElementById('score')
     const newScore = parseInt(gamerScore.innerHTML) + 10;
     gamerScore.innerHTML = newScore;
 }
-
+ 
 function gameOver(){
     clearInterval(timeRemaining);
     console.log("game over");
     let game = document.getElementsByClassName('game-area');
     // game.toggleClass('game-over-overlay');
 }
-
-// function victory(){
-//     if(matchedCards)
-// }
-
+ 
+function victory(){
+    console.log("Victory");
+    clearInterval(timer)
+}
+ 
 function menuToggle(){
     $("button").addEventListener('click',function(){
         $(".game-rules").toggleClass();
