@@ -134,7 +134,7 @@ function flipCard(){
     }
 }
 
-done.addEventListener('click', flipCard, flipCount);
+// done.addEventListener('click', flipCard, flipCount);
 
 function correctMatch() {
     // actions taken if cards match
@@ -161,16 +161,22 @@ function increaseScore(){
     gamerScore.innerHTML = newScore;
 }
  
+
 function gameOver(){
     clearInterval(timeRemaining);
-    console.log("game over");
-    let game = document.getElementsByClassName('game-area');
-    // game.toggleClass('game-over-overlay');
+    let timeUp = document.getElementById('game-over');
+    setTimeout(()=>{
+        timeUp.classList.add('visible');
+        console.log("game over")   
+    }, 2000)
+
 }
  
 function victory(){
+    let gameFinish = document.getElementById('victory');
+    gameFinish.classList.add('visible');
+    clearInterval(timeRemaining)
     console.log("Victory");
-    clearInterval(timer)
 }
  
 function menuToggle(){

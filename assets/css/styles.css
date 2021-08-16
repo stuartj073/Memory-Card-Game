@@ -165,9 +165,53 @@ h2 {
 
 /********************************* GAME AREA- OVERLAYS ***/
 
-.game-over-overlay {
-    background-color: rgba(1, 1, 1, 0.5);
+.overlays {
+    display:none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    position: fixed;
+    color:#627E9A;
+    transition: background-color 500ms, font-size 500ms;
+    font-size:15rem;
+    text-align:center;
+    background-color: rgba(0, 0, 0, .7);
 }
+
+.overlays.visible{
+    display:flex;
+    justify-content: center;
+}
+
+.overlays {
+    display: none;
+}
+
+#restart {
+    font-size: 3rem;
+    text-align: center;
+    display:block;
+    justify-content: center;
+
+}
+
+  .overlay-text.visible {
+    display: flex;
+    animation: overlay-grow 500ms forwards;
+}
+
+  @keyframes overlay-grow {
+    from {
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 0;
+    }
+    to {
+      background-color: rgba(0, 0, 0, .8);
+      font-size: 10em;
+    }
+  }
 
 /********************************* MEDIA QUERIES ***/
 
