@@ -34,6 +34,7 @@ function startGame(){
     countDown();
     totalTime.innerHTML = startTime;
     gamerScore.innerHTML = 0;
+    flips.innerHTML = 0;
     shuffleCards();
 
     // allow the user a few seconds before
@@ -56,8 +57,6 @@ function unFlipCards() {
     });
 }
 
-$("stars")
-
 function resetGame(){
     let matchedCards = 0;
     let countFlippedCards = 0;
@@ -78,6 +77,8 @@ function timer(){
 }
  
 function flipCount(){
+    // if lock is true then the user
+    // should not be allowed to flip 
     if (lock) return;
     let cards = Array.from(document.getElementsByClassName('card'));
         for(let i=0;i<cards.length;i++){
@@ -85,6 +86,7 @@ function flipCount(){
             flips.innerText++;
             correctMatch = flips.innerText;
             
+        // star rating to reflect users performance
         let stars = Array.from(document.getElementsByClassName('far fa-star'));
 
         if(flips.innerHTML > "1"){
@@ -106,15 +108,6 @@ function shuffleCards(){
     }
 }
  
-function toggleRules(){
-console.log("hello");
-}
- 
-$("#game-rules").click(function(){
-    ("button").slideToggle("slow");
- })
- 
-
 
 
 let flippedCard = false;
@@ -123,9 +116,9 @@ function flipCard(){
     // "flip" cards by adding the flipC
     // class to each card that is 'clicked'
     
+    // cannot double click on card
     if(firstCard?.key === this.key) return;
     if(lock) return;
-    console.log("haz")
     flips.innerText++;
     this.classList.add('flipC');
     if(!flippedCard){
@@ -139,14 +132,15 @@ function flipCard(){
         flippedCard = false;
         secondCard = this;
         lock = true;
-        // check if cards match
         
+        // check if cards match
         if(firstCard.childNodes[1].src === secondCard.childNodes[1].src){
             // correctMatch();
             lock = false;
             increaseScore();
             matchedCards++;
             
+            // how the game is won
             if (matchedCards == 8){
                 victory();
             }
@@ -162,13 +156,14 @@ function flipCard(){
 // done.addEventListener('click', flipCard, flipCount);
 
 function correctMatch() {
-    // actions taken if cards match
+    // events if cards match
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
     firstCard = null;
 }
  
 function incorrectMatch(){
+    // events if cards mismatch
     lock = true;
     setTimeout(()=>{
     firstCard.classList.remove('flipC');
@@ -194,6 +189,8 @@ function gameOver(){
     // must clear interval to clear/stop
     // the timer interval
     clearInterval(timeRemaining);
+    
+    // game over overlay display
     let timeUp = document.getElementById('game-over');
     setTimeout(()=>{
         timeUp.classList.add('visible');
@@ -206,9 +203,7 @@ function gameOver(){
  
 function victory(){
     let gameFinish = document.getElementById('victory');
-    // allowing the victory overlay to become 
-    // visible when the game has been won
-
+    // victory overlay display
     gameFinish.classList.add('visible');
     clearInterval(timeRemaining);
     unFlipCards();
@@ -218,7 +213,7 @@ function victory(){
 function restart(){
     let gameOverlay = document.getElementById('game-over');
     let victoryOverlay = document.getElementById('victory');
-
+    // click to restart game
     gameOverlay.classList.remove('visible');
     victoryOverlay.classList.remove('visible');
     
