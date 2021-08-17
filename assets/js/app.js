@@ -3,7 +3,7 @@ const cards = Array.from(document.getElementsByClassName('card'));
 const timeRemaining = setInterval(timer, 1000)
 this.busy = true;
 let stars = Array.from(document.getElementsByClassName('far fa-star'));
-
+const gameOverlays = Array.from(document.getElementsByClassName('overlays'));
  
 let firstCard;
 let secondCard;
@@ -178,7 +178,19 @@ function victory(){
     clearInterval(timeRemaining)
     console.log("Victory");
 }
- 
+
+function restart(){
+    let gameOverlay = document.getElementById('game-over');
+    let gameOverlay = document.getElementById('game-over');
+
+    gameOverlay.classList.remove('visible');
+    victoryOverlay.classList.remove('visible');
+    
+    startGame();
+}
+
+gameOverlays.forEach(overlay=>overlay.addEventListener('click', restart));
+
 function menuToggle(){
     $("button").addEventListener('click',function(){
         $(".game-rules").toggleClass();
