@@ -31,6 +31,14 @@ function startGame(){
     shuffleCards();
 }
 
+function unFlipCards() {
+    cards.forEach(card=>{
+        if(card.classList.contains("flipC")){
+            card.classList.remove("flipC");
+        }
+    });
+}
+
 function resetGame(){
     let matchedCards = 0;
     let countFlippedCards = 0;
@@ -168,7 +176,9 @@ function gameOver(){
     setTimeout(()=>{
         timeUp.classList.add('visible');
         console.log("game over")   
-    }, 2000)
+    }, 200);
+
+    unFlipCards();
 
 }
  
