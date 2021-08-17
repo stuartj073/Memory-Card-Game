@@ -16,20 +16,34 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="game-over" class="overlays">
-        GAME OVER
-        <span id="restart">Click to restart</span>
+    <div id="countdown" class="overlays"></div>
+    <div class="overlays" id="game-over">
+        <div class="row">
+            <div class="col-12">
+            GAME OVER
+            </div>
+        <div class="col-12">
+            <span id="restart">Click to restart</span>
+        </div>
+        </div>
     </div>
-    <div id="victory" class="overlays">
-        Victory 
-        <span id="restart">Click to restart</span>
+    <div class="overlays" id="victory">
+        <div class="row">
+            <div class="col-12">
+            VICTORY
+            </div>
+        <div class="col-12">
+            <span id="restart">Click to restart</span>
+        </div>
+        </div>
     </div>
     <div class="game-area-top">
         <h2><a href="index.html">Mario Memory</a></h2>
     </div>
     <div class="game-info">
         <div class="game-titles">Score: <span id="score">0</span></div>
-        <div class="game-titles" id="star-rating"><i class="far fa-star"></i>
+        <div class="game-titles" id="star-rating">
+            <i class="far fa-star"></i>
             <i class="far fa-star"></i>
             <i class="far fa-star"></i>
         </div>

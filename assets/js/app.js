@@ -1,6 +1,7 @@
 const cards = Array.from(document.getElementsByClassName('card'));
 const gamerScore = document.getElementById('score');
-let stars = Array.from(document.getElementsByClassName('far fa-star'));
+// const stars = Array.from(document.getElementsByClassName('far fa-star'));
+const stars = document.getElementById('star-rating');
 const totalTime = document.getElementById('time');
 const gameOverlays = Array.from(document.getElementsByClassName('overlays'));
 const startTime = totalTime.innerHTML;
@@ -22,9 +23,18 @@ if(document.readyState === "loading") {
         startGame();
     })
 }
+
+function countDown(){
+    let nums = [3, 2, 1];
+    
+    for(let i=0; i<nums.length; i++){
+        console.log(nums);
+    }
+}
  
 function startGame(){
     // set to default parameters for game start
+    countDown();
     totalTime.innerHTML = startTime;
     gamerScore.innerHTML = 0;
     shuffleCards();
@@ -46,6 +56,8 @@ function unFlipCards() {
     });
 }
 
+$("stars")
+
 function resetGame(){
     let matchedCards = 0;
     let countFlippedCards = 0;
@@ -60,6 +72,8 @@ function timer(){
     if(totalTime.innerHTML === "0"){
     gameOver();
     totalTime.innerHTMl = totalTime.innerHTML;
+    }else if(totalTime.innerHTML ==="45"){
+        stars.classList.remove('farfa-star');
     }
 }
  
@@ -127,8 +141,6 @@ function flipCard(){
         if(firstCard.childNodes[1].src === secondCard.childNodes[1].src){
             // correctMatch();
             lock = false;
-            done.push(firstCard.childNodes[1].src);
-            done.push(secondCard.childNodes[1].src);
             increaseScore();
             matchedCards++;
             
