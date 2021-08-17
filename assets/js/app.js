@@ -38,6 +38,7 @@ function startGame(){
 }
 
 function unFlipCards() {
+    // to reset the game
     cards.forEach(card=>{
         if(card.classList.contains("flipC")){
             card.classList.remove("flipC");
@@ -51,6 +52,8 @@ function resetGame(){
 }
  
 function timer(){
+    // interval in startGame calls this function
+    // every second
     let totalTime = document.getElementById('time');
     totalTime.innerHTML--;
     
@@ -97,22 +100,16 @@ $("#game-rules").click(function(){
     ("button").slideToggle("slow");
  })
  
-//  function flipCard(){
-//     this.classList.add('flipC');
-//     let firstClick;
-//     let secondClick;
-// }
 
-let done = [];
+
 
 let flippedCard = false;
 
 function flipCard(){
-    // to flip cards
-    console.log("FlipCard  ", lock);
+    // "flip" cards by adding the flipC
+    // class to each card that is 'clicked'
+    
     if(lock) return;
-
-    // countFlippedCards++;
     this.classList.add('flipC');
     if(!flippedCard){
         // first card
@@ -124,7 +121,6 @@ function flipCard(){
         // second card
         flippedCard = false;
         secondCard = this;
-        // countFlippedCards++;
         lock = true;
         // check if cards match
         
@@ -170,6 +166,8 @@ function incorrectMatch(){
 }
  
 function increaseScore(){
+    // increase a users score by targeting the 
+    // necessary HTML elements
     let gamerScore = document.getElementById('score')
     const newScore = parseInt(gamerScore.innerHTML) + 10;
     gamerScore.innerHTML = newScore;
@@ -177,6 +175,8 @@ function increaseScore(){
  
 
 function gameOver(){
+    // must clear interval to clear/stop
+    // the timer interval
     clearInterval(timeRemaining);
     let timeUp = document.getElementById('game-over');
     setTimeout(()=>{
@@ -190,7 +190,9 @@ function gameOver(){
  
 function victory(){
     let gameFinish = document.getElementById('victory');
-    
+    // allowing the victory overlay to become 
+    // visible when the game has been won
+
     gameFinish.classList.add('visible');
     clearInterval(timeRemaining);
     unFlipCards();
@@ -207,6 +209,7 @@ function restart(){
     startGame();
 }
 
+// event listener to remove each overlay as they appear
 gameOverlays.forEach(overlay=>overlay.addEventListener('click', restart));
 
 function menuToggle(){
