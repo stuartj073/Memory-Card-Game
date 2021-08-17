@@ -137,7 +137,7 @@ function flipCard(){
             matchedCards++;
             
             if (matchedCards == 8){
-                victory()
+                victory();
             }
         
         } else {
@@ -190,8 +190,10 @@ function gameOver(){
  
 function victory(){
     let gameFinish = document.getElementById('victory');
+    
     gameFinish.classList.add('visible');
-    clearInterval(timeRemaining)
+    clearInterval(timeRemaining);
+    unFlipCards();
     console.log("Victory");
 }
 
