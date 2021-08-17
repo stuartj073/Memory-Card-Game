@@ -4,6 +4,7 @@ const timeRemaining = setInterval(timer, 1000)
 this.busy = true;
 let stars = Array.from(document.getElementsByClassName('far fa-star'));
 const gameOverlays = Array.from(document.getElementsByClassName('overlays'));
+const startTime = totalTime.innerHTML;
  
 let firstCard;
 let secondCard;
@@ -12,7 +13,7 @@ let lock = false;
 let matchedCards = 0;
 let countFlippedCards = 0;
  
-cards.forEach(card=>card.addEventListener('click', flipCard))
+
 
 
 
@@ -24,11 +25,17 @@ if(document.readyState === "loading") {
 }
  
 function startGame(){
-    // timeRemaining = flips.innerHTML;
-    timer();
-    flipCount();
-    resetGame();
+    // set to default parameters for game start
+    totalTime.innerHTML = startTime;
+    gamerScore.innerHTML = 0;
     shuffleCards();
+
+    // allow the user a few seconds before
+    // game start
+    setTimeout(()=>{
+        timeRemaining = setInterval(timer, 1000)
+        cards.forEach(card=>card.addEventListener('click', flipCard))
+    }, 3000)
 }
 
 function unFlipCards() {
