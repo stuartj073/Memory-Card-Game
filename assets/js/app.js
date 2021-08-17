@@ -14,9 +14,6 @@ let matchedCards = 0;
 let countFlippedCards = 0;
  
 
-
-
-
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", ()=>{
         console.log("Hibye")
@@ -43,7 +40,10 @@ function startGame(){
     // game start
     setTimeout(()=>{
         timeRemaining = setInterval(timer, 1000)
-        cards.forEach(card=>card.addEventListener('click', flipCard))
+        cards.forEach((card, index)=>{
+            card.key = index;
+            card.addEventListener('click', flipCard)
+        })
     }, 3000)
 }
 
@@ -123,7 +123,10 @@ function flipCard(){
     // "flip" cards by adding the flipC
     // class to each card that is 'clicked'
     
+    if(firstCard?.key === this.key) return;
     if(lock) return;
+    console.log("haz")
+    flips.innerText++;
     this.classList.add('flipC');
     if(!flippedCard){
         // first card
@@ -162,7 +165,7 @@ function correctMatch() {
     // actions taken if cards match
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-    console.log("match")
+    firstCard = null;
 }
  
 function incorrectMatch(){
@@ -170,7 +173,8 @@ function incorrectMatch(){
     setTimeout(()=>{
     firstCard.classList.remove('flipC');
     secondCard.classList.remove('flipC');
-    console.log("iC");
+    firstCard = null;
+
     lock = false;
     }, 1000);
     // firstCard.addEventListener('click', flipCard);
