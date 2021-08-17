@@ -1,8 +1,7 @@
-const userScore = 0;
 const cards = Array.from(document.getElementsByClassName('card'));
-const timeRemaining = setInterval(timer, 1000)
-this.busy = true;
+const gamerScore = document.getElementById('score');
 let stars = Array.from(document.getElementsByClassName('far fa-star'));
+const totalTime = document.getElementById('time');
 const gameOverlays = Array.from(document.getElementsByClassName('overlays'));
 const startTime = totalTime.innerHTML;
  
@@ -20,7 +19,7 @@ let countFlippedCards = 0;
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", ()=>{
         console.log("Hibye")
-        setTimeout(startGame(), 500000)
+        startGame();
     })
 }
  
@@ -198,7 +197,7 @@ function victory(){
 
 function restart(){
     let gameOverlay = document.getElementById('game-over');
-    let gameOverlay = document.getElementById('game-over');
+    let victoryOverlay = document.getElementById('victory');
 
     gameOverlay.classList.remove('visible');
     victoryOverlay.classList.remove('visible');
