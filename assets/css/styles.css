@@ -58,7 +58,7 @@ h2 {
 }
 
 .game-area-top {
-    min-height:10%;
+    min-height:1px;
     width:100%;
     background-color:#CDC8DA;
     padding:5px;
@@ -235,10 +235,14 @@ h2 {
 /********************************* MEDIA QUERIES ***/
 
 @media only screen and (max-width:590px) {
-        .game-area{
-            grid-template-columns: repeat(2, auto);
-            display:grid;
-
+        .card {
+            height:110px;
+            width:110px;
+        }
+    
+        .front, .back {
+            height:100px;
+            width:100px;
         }
 
         .game-titles {
@@ -253,10 +257,6 @@ h2 {
             font-size:6rem;
         }
         
-        .game-area-top {
-            min-height:300px
-        }
-
         .overlays {
             font-size: 6rem;
         }
