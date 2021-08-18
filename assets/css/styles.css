@@ -1,5 +1,5 @@
-@import url('http://fonts.cdnfonts.com/css/super-mario-bros-alphabet');*/
-/*@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+/* @import url('http://fonts.cdnfonts.com/css/super-mario-bros-alphabet');*/ */
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
 /********************************* GENERAL ***/
 
@@ -9,10 +9,20 @@
     padding:0;
 }
 
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
 body {
-    font-family: 'Super Mario Bros Alphabet', sans-serif;
-    /*font-family: 'Italiana', serif;*/
+    /* font-family: 'Super Mario Bros Alphabet', sans-serif; */
+    font-family: 'Italiana', serif;
     color:#303956;
+    overflow-x: hidden;
 
 }
 
@@ -25,13 +35,13 @@ a {
 
 h2 {
     color:#E52521;
-    /*font-family: 'Italiana', serif;*/
-    font-family: 'Super Mario Bros Alphabet', sans-serif;
+    font-family: 'Italiana', serif;
+    /* font-family: 'Super Mario Bros Alphabet', sans-serif; */
     letter-spacing: 1px;
 }
 
 .game-heading {
-    height:60vh;
+    min-height:20%;
 }
 
 .game-heading h2 {
@@ -48,15 +58,16 @@ h2 {
 }
 
 .game-area-top {
-    height:30vh;
+    min-height:10%;
     width:100%;
     background-color:#CDC8DA;
+    padding:5px;
 }
 
 .game-area-top h2 {
     text-align:center;
     font-size:8rem;
-    margin:5px 0;
+    
 }
 
 /********************************* GAME MODES ***/
@@ -80,7 +91,7 @@ h2 {
 /********************************* GAME BACKGROUNDS ***/
 
 .menu-background {
-    background-image: url("../images/romeo-a-9g11WIv0Ias-unsplash.jpg");
+    background: url("../images/romeo-a-9g11WIv0Ias-unsplash.jpg") no-repeat center center;
     width:100%;
 }
 
@@ -221,45 +232,18 @@ h2 {
     animation: overlay-grow 500ms forwards;
 }
 
-  @keyframes overlay-grow {
-    from {
-      background-color: rgba(0, 0, 0, 0);
-      font-size: 0;
-    }
-    to {
-      background-color: rgba(0, 0, 0, .8);
-      font-size: 10em;
-    }
-  }
-
 /********************************* MEDIA QUERIES ***/
 
 @media only screen and (max-width:375px) {
-    .game-area{
-        grid-template-columns: repeat(2, auto);
+        .game-area{
+            grid-template-columns: repeat(2, auto);
+            display:grid;
+
+        }
+        
+        .game-area-top {
+            min-height:300px
+        }
     }
 
-    .card {
-        height: 160px;
-        width:100px;
-        margin:50px;
-    }
-
-    .game-area-top {
-        min-height:300px
-    }
-}
-
-
-@media only screen and (max-width:375px) {
-    .game-area{
-        grid-template-columns: repeat(2, auto);
-    }
-
-    .card {
-        height:160px;
-        width:100px;
-        margin:25px;
-
-    }
 }
