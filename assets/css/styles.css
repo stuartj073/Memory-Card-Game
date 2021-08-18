@@ -106,7 +106,6 @@ h2 {
 .game-titles i  {
     font-weight:500;
     font-size:3rem;
-    background-color:;
     color:black;
 }
 
@@ -129,9 +128,9 @@ h2 {
     /*background-image:url("../images/1368664.jpg");
     background-repeat:no-repeat;
     background-position:center;*/
-    height:160px;
+    height:140px;
     width:130px;
-    margin:10px 10px;
+    margin:1.5px;
     border: 1.5px solid #777777;
     background-color:white;
     position:relative;
@@ -157,10 +156,30 @@ h2 {
 .front, .back {
     top:0;
     left:0;
-    height:150px;
-    width:120px;
+    height: 120px;
+    width: 120px;
     position:absolute;
     backface-visibility: hidden;
+}
+
+/********************************* LEADERBOARD ***/
+
+.leaderboard {
+    height:100px;
+    width:33%;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    border:1px solid black;
+    display:none;
+    background-color:rgba(118, 118, 128, 0.3);
+}
+
+.leaderboard.visible {
+    display: flex;
+    justify-content: center;
 }
 
 /********************************* GAME AREA- OVERLAYS ***/
