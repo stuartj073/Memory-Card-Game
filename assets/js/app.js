@@ -10,7 +10,7 @@ let firstCard;
 let secondCard;
 let hasFlippedCard = false;
 let lock = false;
-let matchedCards = 0;
+let matchedCards = 1;
 let countFlippedCards = 0;
  
 
@@ -32,7 +32,7 @@ function countDown(){
 function startGame(){
     // set to default parameters for game start
     countDown();
-    unFlipCards();
+    // unFlipCards();
     totalTime.innerHTML = startTime;
     gamerScore.innerHTML = 0;
     flips.innerHTML = 0;
@@ -58,25 +58,28 @@ function unFlipCards() {
     });
 }
 
-function resetGame(){
-    let matchedCards = 0;
-    let countFlippedCards = 0;
-}
+// function resetGame(){
+//     let matchedCards = 0;
+//     let countFlippedCards = 0;
+// }
  
 function timer(){
     // interval in startGame calls this function
     // every second
     let totalTime = document.getElementById('time');
     totalTime.innerHTML--;
-    
+    let star = document.getElementById("shtar")
+
     if(totalTime.innerHTML === "0"){
     gameOver();
+    unFlipCards();
     totalTime.innerHTMl = totalTime.innerHTML;
     }else if(totalTime.innerHTML ==="45"){
-        stars.classList.remove('farfa-star');
+        stars.classList.remove('star-rating');
+        removeStar();
     }
 }
- 
+
 function flipCount(){
     // if lock is true then the user
     // should not be allowed to flip 
@@ -139,10 +142,12 @@ function flipCard(){
             // correctMatch();
             lock = false;
             increaseScore();
-            matchedCards++;
+            ++this.matchedCards;
+            console.log("This Matched cards is " + this.matchedCards);
             
             // how the game is won
-            if (matchedCards == 8){
+            if (matchedCards === 8){
+                console.log("game won");
                 victory();
             }
         
@@ -203,6 +208,7 @@ function gameOver(){
 function victory(){
     let gameFinish = document.getElementById('victory');
     // victory overlay display
+    
     gameFinish.classList.add('visible');
     clearInterval(timeRemaining);
     unFlipCards();

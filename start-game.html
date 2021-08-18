@@ -22,9 +22,58 @@
             <div class="col-12">
             GAME OVER
             </div>
-        <div class="col-12">
-            <span id="restart">Click to restart</span>
+            <div class="row">
+                <div class="col-12">
+                    <div class="high-scores">
+                        <h1 id="board-heading">Your High Scores</h1>
+                        <div class="row">
+                            <div class="col-2 score">
+                                1.
+                            </div>
+                            <div class="col-10 score">
+                                Score
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 score">
+                                2.
+                            </div>
+                            <div class="col-10 score">
+                                Score
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 score">
+                                3.
+                            </div>
+                            <div class="col-10 score">
+                                Score
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 score">
+                                4.
+                            </div>
+                            <div class="col-10 score">
+                                Score
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 score">
+                                5.
+                            </div>
+                            <div class="col-10 score">
+                                Score
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- <div class="col-12">
+            <button id="restart">Click to restart</button>
+        </div> -->
         </div>
     </div>
     <div class="overlays" id="victory">
@@ -32,15 +81,17 @@
             <div class="col-12">
             VICTORY
             </div>
+            <form class="score-form">
+                <h2>Enter Score Below</h2>
+                <h3>Name:</h3>
+                <input type="text">
+                <h3>`Score: ${gamer} `</h3>
+            </form>
         
         <!-- <div class="row"> -->
             <div class="col-12">
                 <span id="restart">Click to restart</span>
             </div>
-            <!-- <div class="col-12 col-md-6">
-                <span id="input-score"class="leaderboard" onclick="contribute();">Click to add Score</span>
-            </div> -->
-        <!-- </div> -->
     </div>
     </div>
     <div class="game-area-top">
@@ -49,16 +100,16 @@
     <div class="game-info">
         <div class="game-titles">Score: <span id="score">0</span></div>
         <div class="game-titles" id="star-rating">
-            <i class="far fa-star"></i>
+            <i id="shtar" class="far fa-star"></i>
             <i class="far fa-star"></i>
             <i class="far fa-star"></i>
         </div>
-        <div class="game-titles">Time: <span id="time">90</span></div>
+        <div class="game-titles">Time: <span id="time">5</span></div>
         <div class="game-titles">Flips: <span id="flips">0</span></div>
     </div>
-    <div class="restart-sec">
+    <!-- <div class="restart-sec">
         <button class="fa fa-repeat" onclick="startGame()">Restart</button>
-    </div>
+    </div> -->
     <section class="container game-area">
         <div class="card">
             <img class="front" src="assets/images/Mh33-player-icons-peaches.jpg" alt="peaches" data-framework="p">
