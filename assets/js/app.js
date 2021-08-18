@@ -32,6 +32,7 @@ function countDown(){
 function startGame(){
     // set to default parameters for game start
     countDown();
+    unFlipCards();
     totalTime.innerHTML = startTime;
     gamerScore.innerHTML = 0;
     flips.innerHTML = 0;
@@ -45,7 +46,7 @@ function startGame(){
             card.key = index;
             card.addEventListener('click', flipCard)
         })
-    }, 3000)
+    }, 2000)
 }
 
 function unFlipCards() {
@@ -190,15 +191,13 @@ function gameOver(){
     // the timer interval
     clearInterval(timeRemaining);
     
+    
     // game over overlay display
     let timeUp = document.getElementById('game-over');
     setTimeout(()=>{
         timeUp.classList.add('visible');
         console.log("game over")   
-    }, 200);
-
-    unFlipCards();
-
+    }, 2000);
 }
  
 function victory(){
@@ -208,6 +207,7 @@ function victory(){
     clearInterval(timeRemaining);
     unFlipCards();
     console.log("Victory");
+    alert(`Well done, you got ${gamerScore.innerHTML} points`)
 }
 
 function restart(){
