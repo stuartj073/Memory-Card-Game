@@ -161,7 +161,7 @@ function flipCard(){
         
         // check if cards match
         if(firstCard.childNodes[1].src === secondCard.childNodes[1].src){
-            correctMatch();
+            correctPair();
             lock = false;
             increaseScore();
             matchedCards++;
@@ -182,7 +182,7 @@ function flipCard(){
 
 // done.addEventListener('click', flipCard, flipCount);
 
-function correctMatch() {
+function correctPair() {
     // events if cards match
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
