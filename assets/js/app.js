@@ -1,3 +1,4 @@
+// constants
 const cards = Array.from(document.getElementsByClassName('card'));
 const gamerScore = document.getElementById('score');
 const stars = document.getElementById('star-rating');
@@ -6,11 +7,11 @@ const gameOverlay = document.getElementById('game-over');
 const victoryOverlay = document.getElementById('victory');
 const startTime = totalTime.innerHTML;
 const saveKeyScore = "highscore";
-
 const highScore = document.getElementById('top-score');
+
+// variables
 let firstCard;
 let secondCard;
-let hasFlippedCard = false;
 let lock = false;
 let matchedCards = 0;
 let countFlippedCards = 0;
@@ -30,25 +31,23 @@ if(document.readyState === "loading") {
     })
 }
 
-function countDown(){
-    let nums = [3, 2, 1];
+// function countDown(){
+//     let nums = [3, 2, 1];
     
-    for(let i=0; i<nums.length; i++){
-        console.log(nums);
-    }
-}
+//     for(let i=0; i<nums.length; i++){
+//         console.log(nums);
+//     }
+// }
  
 function startGame(){
     // set to default parameters for game start
-    countDown();
-    // unFlipCards();
-
     // default settings
-    
+    totalTime.innerHTML = startTime;
+    gamerScore.innerHTML = 0;
+    flips.innerHTML = 0;
     shuffleCards();
     
     // save the user's high score to local storage
-    // for every increase they get
     let scoreStr = highScore.innerHTML = localStorage.getItem(saveKeyScore);
     if(scoreStr == null) {
         highScore.innerHTML = 0;
@@ -56,10 +55,6 @@ function startGame(){
         highScore.innerHTML = parseInt(scoreStr);
     }
 
-    totalTime.innerHTML = startTime;
-    gamerScore.innerHTML = 0;
-    flips.innerHTML = 0;
-    
     // allow the user a few seconds before
     // game start
     setTimeout(()=>{
@@ -72,7 +67,7 @@ function startGame(){
 }
 
 function unFlipCards() {
-    // to reset the game
+    // to reset the cards
     cards.forEach(card=>{
         if(card.classList.contains("flipC")){
             card.classList.remove("flipC");
@@ -80,11 +75,6 @@ function unFlipCards() {
     });
 }
 
-// function resetGame(){
-//     let matchedCards = 0;
-//     let countFlippedCards = 0;
-// }
- 
 function timer(){
     // interval in startGame calls this function
     // every second
@@ -92,9 +82,8 @@ function timer(){
     totalTime.innerHTML--;
     
     if(totalTime.innerHTML === "0"){
-    gameOver();
-    unFlipCards();
-    totalTime.innerHTMl = totalTime.innerHTML;
+        gameOver();
+        unFlipCards();
     }
 }
 
@@ -102,20 +91,14 @@ function flipCount(){
     // if lock is true then the user
     // should not be allowed to flip 
     if (lock) return;
+    
+    // attach flip count to all cards in the array
     let cards = Array.from(document.getElementsByClassName('card'));
         for(let i=0;i<cards.length;i++){
         cards[i].addEventListener('click', ()=>{
             flips.innerText++;
             correctMatch = flips.innerText;
-            
-        // star rating to reflect users performance
-        let stars = Array.from(document.getElementsByClassName('far fa-star'));
-
-        if(flips.innerHTML > "1"){
-            console.log("uh")
-            
         }
-        });
     }
 }
  
@@ -152,7 +135,7 @@ function flipCard(){
         firstCard = this;
         firstCard.removeEventListener('click', flipCount);
         
-    }else {
+    } else {
         // second card
         flippedCard = false;
         secondCard = this;
@@ -180,8 +163,6 @@ function flipCard(){
     }
 }
 
-// done.addEventListener('click', flipCard, flipCount);
-
 function correctPair() {
     // events if cards match
     firstCard.removeEventListener('click', flipCard);
@@ -199,8 +180,6 @@ function incorrectMatch(){
 
     lock = false;
     }, 1000);
-    // firstCard.addEventListener('click', flipCard);
-    // secondCard.addEventListener('click', flipCard);
 }
  
 function increaseScore(){
@@ -215,7 +194,6 @@ function increaseScore(){
         highScore.innerHTML = gamerScore.innerHTML;
         localStorage.setItem(saveKeyScore, highScore.innerHTML);
     }
-    
 }
 
 function gameOver(){
@@ -224,7 +202,8 @@ function gameOver(){
     clearInterval(timeRemaining);
     gameMusic.pause();
     gameOverMusic.play();
-    // game over overlay display
+    
+    // game-over overlay display
     let timeUp = document.getElementById('game-over');
     setTimeout(()=>{
         timeUp.classList.add('visible');
@@ -235,11 +214,6 @@ function gameOver(){
     setTimeout(()=>{
         gameOverlay.addEventListener('click', restart);
     }, 3000);
-
-
-
-    //  checkHighScore(account.score);
-
 }
 
  
@@ -257,15 +231,13 @@ function victory(){
     
     // longer timeout for longer music
     setTimeout(()=>{
-        // gameOverlays.forEach(overlay=>overlay.addEventListener('click', restart));
         victoryOverlay.addEventListener('click', restart);
-    }, 7000);
+        }, 7000);
 }
 
 function restart(){
     // click to restart game
     
-    // to allow end music to play out
     gameOverlay.classList.remove('visible');
     victoryOverlay.classList.remove('visible');
     startGame();
