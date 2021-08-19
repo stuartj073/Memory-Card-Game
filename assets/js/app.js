@@ -2,7 +2,8 @@ const cards = Array.from(document.getElementsByClassName('card'));
 const gamerScore = document.getElementById('score');
 const stars = document.getElementById('star-rating');
 const totalTime = document.getElementById('time');
-const gameOverlays = Array.from(document.getElementsByClassName('overlays'));
+const gameOverlay = document.getElementById('game-over');
+const victoryOverlay = document.getElementById('victory');
 const startTime = totalTime.innerHTML;
 const saveKeyScore = "highscore";
 
@@ -67,7 +68,7 @@ function startGame(){
             card.key = index;
             card.addEventListener('click', flipCard)
         })
-    }, 2000)
+    }, 2000);
 }
 
 function unFlipCards() {
@@ -89,15 +90,11 @@ function timer(){
     // every second
     let totalTime = document.getElementById('time');
     totalTime.innerHTML--;
-    let star = document.getElementById("shtar")
-
+    
     if(totalTime.innerHTML === "0"){
     gameOver();
     unFlipCards();
     totalTime.innerHTMl = totalTime.innerHTML;
-    }else if(totalTime.innerHTML ==="45"){
-        stars.classList.remove('star-rating');
-        removeStar();
     }
 }
 
@@ -164,7 +161,7 @@ function flipCard(){
         
         // check if cards match
         if(firstCard.childNodes[1].src === secondCard.childNodes[1].src){
-            // correctMatch();
+            correctMatch();
             lock = false;
             increaseScore();
             matchedCards++;
@@ -232,7 +229,13 @@ function gameOver(){
     setTimeout(()=>{
         timeUp.classList.add('visible');
         console.log("game over")   
-    }, 2000);
+    }, 500);
+    // event listener to remove each overlay as they appear
+    setTimeout(()=>{
+        gameOverlays.forEach(overlay=>overlay.addEventListener('click', restart))
+    }, 3000);
+
+
 
     //  checkHighScore(account.score);
 
@@ -250,26 +253,24 @@ function victory(){
     clearInterval(timeRemaining);
     unFlipCards();
     console.log("Victory");
+    
+    // longer timeout for longer music
+    setTimeout(()=>{
+        // gameOverlays.forEach(overlay=>overlay.addEventListener('click', restart));
+        victoryOverlay.addEventListener('click', restart);
+    }, 7000);
 }
 
 function restart(){
-    let gameOverlay = document.getElementById('game-over');
-    let victoryOverlay = document.getElementById('victory');
-    
     // click to restart game
     
     // to allow end music to play out
-    setTimeout(()=>{
     gameOverlay.classList.remove('visible');
     victoryOverlay.classList.remove('visible');
     startGame();
-    }, 7000);
     
-    
+    console.log("rstart")
 }
-
-// event listener to remove each overlay as they appear
-gameOverlays.forEach(overlay=>overlay.addEventListener('click', restart));
 
 function menuToggle(){
     $("button").addEventListener('click',function(){
