@@ -1,11 +1,12 @@
 const cards = Array.from(document.getElementsByClassName('card'));
 const gamerScore = document.getElementById('score');
-// const stars = Array.from(document.getElementsByClassName('far fa-star'));
 const stars = document.getElementById('star-rating');
 const totalTime = document.getElementById('time');
 const gameOverlays = Array.from(document.getElementsByClassName('overlays'));
 const startTime = totalTime.innerHTML;
- 
+const saveKeyScore = "highscore";
+
+const highScore = document.getElementById('top-score');
 let firstCard;
 let secondCard;
 let hasFlippedCard = false;
@@ -32,12 +33,26 @@ function countDown(){
 function startGame(){
     // set to default parameters for game start
     countDown();
+
     // unFlipCards();
+
+    // default settings
+    
+    shuffleCards();
+    
+    // save the user's high score to local storage
+    // for every increase they get
+    let scoreStr = highScore.innerHTML = localStorage.getItem(saveKeyScore);
+    if(scoreStr == null) {
+        highScore.innerHTML = 0;
+    }   else {
+        highScore.innerHTML = parseInt(scoreStr);
+    }
+
     totalTime.innerHTML = startTime;
     gamerScore.innerHTML = 0;
     flips.innerHTML = 0;
-    shuffleCards();
-
+    
     // allow the user a few seconds before
     // game start
     setTimeout(()=>{
@@ -142,10 +157,9 @@ function flipCard(){
             // correctMatch();
             lock = false;
             increaseScore();
-            ++this.matchedCards;
-            console.log("This Matched cards is " + this.matchedCards);
+            matchedCards++;
             
-            // how the game is won
+            // match all pairs to win
             if (matchedCards === 8){
                 console.log("game won");
                 victory();
@@ -188,22 +202,31 @@ function increaseScore(){
     let gamerScore = document.getElementById('score')
     const newScore = parseInt(gamerScore.innerHTML) + 10;
     gamerScore.innerHTML = newScore;
+
+    // updating the users high score
+    if(gamerScore.innerHTML > highScore.innerHTML){
+        highScore.innerHTML = gamerScore.innerHTML;
+        localStorage.setItem(saveKeyScore, highScore.innerHTML);
+    }
+    
 }
- 
 
 function gameOver(){
     // must clear interval to clear/stop
     // the timer interval
     clearInterval(timeRemaining);
-    
-    
+
     // game over overlay display
     let timeUp = document.getElementById('game-over');
     setTimeout(()=>{
         timeUp.classList.add('visible');
         console.log("game over")   
     }, 2000);
+
+    //  checkHighScore(account.score);
+
 }
+
  
 function victory(){
     let gameFinish = document.getElementById('victory');
@@ -234,3 +257,4 @@ function menuToggle(){
         $(".game-rules").toggleClass();
     })
 }
+
