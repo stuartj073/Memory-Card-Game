@@ -98,7 +98,7 @@ function flipCount(){
         cards[i].addEventListener('click', ()=>{
             flips.innerText++;
             correctMatch = flips.innerText;
-        }
+        });
     }
 }
  

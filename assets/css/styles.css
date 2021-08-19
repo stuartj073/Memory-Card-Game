@@ -154,6 +154,7 @@ h2 {
     position:relative;
     transform-style:preserve-3d;
     transition: transform.5s;
+    cursor:pointer;
 }
 
 .front {
@@ -162,7 +163,8 @@ h2 {
 
 
 .card.flipC {
-    transform:rotateY(180deg)
+    transform:rotateY(180deg);
+    cursor:auto;
     
 } 
 
