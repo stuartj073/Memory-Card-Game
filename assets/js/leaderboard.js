@@ -7,17 +7,6 @@ if (typeof(Storage) !== "undefined") {
 
 
 
-function setScore(){
-let highS = localStorage.getItem(gamerScore.innerHTML);
-
-document.getElementById('score').value = highS;
-
-}
-
-function populateStorage (){
-    localStorage.setItem('topScore', document.getElementById('top-score').value);
-}
-
 
 // const numOfHighScores = 5;
 // const highScores = 'highScores'

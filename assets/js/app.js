@@ -11,8 +11,15 @@ let firstCard;
 let secondCard;
 let hasFlippedCard = false;
 let lock = false;
-let matchedCards = 1;
+let matchedCards = 0;
 let countFlippedCards = 0;
+
+// game sounds
+const gameMusic = new Audio("./sounds/superMarioBros.mp3");
+const flipSound = new Audio("./sounds/flip.mp3");
+const gameOverMusic = new Audio("./sounds/gameOver.mp3");
+const victoryMusic = new Audio("./sounds/victory.mp3");
+
  
 
 if(document.readyState === "loading") {
@@ -33,7 +40,6 @@ function countDown(){
 function startGame(){
     // set to default parameters for game start
     countDown();
-
     // unFlipCards();
 
     // default settings
@@ -140,6 +146,9 @@ function flipCard(){
     if(lock) return;
     flips.innerText++;
     this.classList.add('flipC');
+    flipSound.play();
+    gameMusic.play();
+    
     if(!flippedCard){
         // first card
         flippedCard = true;
@@ -150,6 +159,7 @@ function flipCard(){
         // second card
         flippedCard = false;
         secondCard = this;
+        flipSound.play();
         lock = true;
         
         // check if cards match
@@ -160,7 +170,7 @@ function flipCard(){
             matchedCards++;
             
             // match all pairs to win
-            if (matchedCards === 8){
+            if (matchedCards == 8){
                 console.log("game won");
                 victory();
             }
@@ -215,7 +225,8 @@ function gameOver(){
     // must clear interval to clear/stop
     // the timer interval
     clearInterval(timeRemaining);
-
+    gameMusic.pause();
+    gameOverMusic.play();
     // game over overlay display
     let timeUp = document.getElementById('game-over');
     setTimeout(()=>{
@@ -230,23 +241,31 @@ function gameOver(){
  
 function victory(){
     let gameFinish = document.getElementById('victory');
-    // victory overlay display
     
+    gameMusic.pause();
+    victoryMusic.play();
+    
+    // victory overlay display
     gameFinish.classList.add('visible');
     clearInterval(timeRemaining);
     unFlipCards();
     console.log("Victory");
-    alert(`Well done, you got ${gamerScore.innerHTML} points`)
 }
 
 function restart(){
     let gameOverlay = document.getElementById('game-over');
     let victoryOverlay = document.getElementById('victory');
+    
     // click to restart game
+    
+    // to allow end music to play out
+    setTimeout(()=>{
     gameOverlay.classList.remove('visible');
     victoryOverlay.classList.remove('visible');
-    
     startGame();
+    }, 7000);
+    
+    
 }
 
 // event listener to remove each overlay as they appear
