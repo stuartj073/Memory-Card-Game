@@ -5,9 +5,9 @@ const stars = document.getElementById('star-rating');
 const totalTime = document.getElementById('time');
 const gameOverlay = document.getElementById('game-over');
 const victoryOverlay = document.getElementById('victory');
-const startTime = totalTime.innerHTML;
 const saveKeyScore = "highscore";
 const highScore = document.getElementById('top-score');
+
 
 // variables
 let firstCard;
@@ -42,7 +42,7 @@ if(document.readyState === "loading") {
 function startGame(){
     // set to default parameters for game start
     // default settings
-    totalTime.innerHTML = startTime;
+    const startTime = totalTime.innerHTML;
     gamerScore.innerHTML = 0;
     flips.innerHTML = 0;
     shuffleCards();
@@ -245,9 +245,6 @@ function restart(){
     console.log("rstart")
 }
 
-function menuToggle(){
-    $("button").addEventListener('click',function(){
-        $(".game-rules").toggleClass();
-    })
-}
+
+
 
