@@ -229,10 +229,11 @@ function gameOver(){
     setTimeout(()=>{
         timeUp.classList.add('visible');
         console.log("game over")   
-    }, 500);
-    // event listener to remove each overlay as they appear
+    }, 200);
+    
+    // 3 seconds to allow for game over music
     setTimeout(()=>{
-        gameOverlays.forEach(overlay=>overlay.addEventListener('click', restart))
+        gameOverlay.addEventListener('click', restart);
     }, 3000);
 
 
