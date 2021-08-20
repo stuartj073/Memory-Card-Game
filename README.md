@@ -40,9 +40,28 @@ The main part of the game will be enlisted within the start-game page. The struc
 
 The game itself will be a simple card matching memory game, whereby the user has to match up the correct icons with each other in the game until every card within the game section has been matched up. The game will be accompanied by background music, while each correct/incorrect flip will be accompanied by different sounds and alerts. When the game comes to completion, either through the timer running out or the user completing the match up sequence, a text overlay with the title of either "Game over" or "Victory!" will be displayed. This will take up the entire length and width of the screen with a slightly dark background. The user will then have the option to contribute to the high score leaderboard with their own name and score while also having the option to begin the game right over again.
 
-### LeaderBoard
+### Overlays
 
 When the player has gone through either process an overlay with either the 'Victory' or 'Game Over' banner will be displayed along with the option to restart/play again. Accompanying each overlay will be the option to post one's own score up to the global leaderboard.
 
 The leaderboard page enlists the top scorers of the game. By including this page to the website users will now have a visual competition upon which to improve their own game in. Using API's allows for a user to contirbute with their own score to the overall leaderboard upon completing the game either through victory (in correctly matching all cards) or through the game ending prematurely (time running out). 
+
+## Bugs
+
+### Flip
+One of the biggest issues facing this game is the aspect of flipping cards. There are three scenarios in which the user shouldn't be able to flip a card within the game.
+The first major concern around this area is that for the game to function properly, the user should only be allowed to flip two cards in any sequence. This entails that a player shouldn't be able to click at multiple cards in quick succession with each card responding the the flipCard event listener as attached to them from the js.file. To counter act this bug it was therefore tantamount to be able to disable the function upon acting on the rest of the cards array once two cards have been chosen/ only allowing the function to be carried out once more when one card has been chosen. 
+
+A simple way of fixing this issue is to literally lock the board. In doing so we must set up a variable called lock and initially set it to false, at the beginning of the flipCard function we must return the lock as being true so that once this condition is met then the rest of the function will not be carried out. In the incorrectMatch function we can also set the lock variable to true which will then allow the setTimeout function to run it's course of one second, again disabling the flipCard function from being able to be carried out. Once the timeOut has been carried out we can then set the lock variable back to false which will then allow the flipCard function to be able to work yet again. On the flip side, if the two cards matched, a remove event listener was then placed upon the two cards, removing the flip count and flip card functions respectively.
+
+### iOS devices
+
+Upon testing the website on different devices it became apparent that there was an issue with apple devices (iOS software based devices). When the user was attempting to play the game and flip each card, the cards would either glitch in and out of their front and back classes, or the cards would simply flip over revealing an empty card. To get a better understanding of the issue at hand, please see the video attached. [video](https://drive.google.com/file/d/1x20q8UN-MaX6J3W4EFh7cG296om9MLEU/view?usp=sharing).
+
+Ofcourse, this was not ideal. However, upon looking at various articles and sites online it became apparent that this was in fact a very common issue that was occuring for many iOS users. The issue was iOS' handling of transformations and animations from browsers. The solution to this issue was recommended by my mentor through using the site [AutoPrefixer](https://autoprefixer.github.io/). The site was able to parse through the code and added any vendor prefixes as required for different operating systems. 
+
+
+
+
+
  

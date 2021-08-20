@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // constants
 const cards = Array.from(document.getElementsByClassName('card'));
 const gamerScore = document.getElementById('score');
@@ -28,9 +30,9 @@ const victoryMusic = new Audio("./sounds/victory.mp3");
 
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", ()=>{
-        console.log("Hibye")
+        console.log("Hibye");
         startGame();
-    })
+    });
 }
 
 // function countDown(){
@@ -60,11 +62,11 @@ function startGame(){
     // allow the user a few seconds before
     // game start
     setTimeout(()=>{
-        timeRemaining = setInterval(timer, 1000)
+        timeRemaining = setInterval(timer, 1000);
         cards.forEach((card, index)=>{
             card.key = index;
-            card.addEventListener('click', flipCard)
-        })
+            card.addEventListener('click', flipCard);
+        });
     }, 2000);
 }
 
@@ -99,7 +101,6 @@ function flipCount(){
         for(let i=0;i<cards.length;i++){
         cards[i].addEventListener('click', ()=>{
             flips.innerText++;
-            correctMatch = flips.innerText;
         });
     }
 }
@@ -189,7 +190,7 @@ function incorrectMatch(){
 function increaseScore(){
     // increase a users score by targeting the 
     // necessary HTML elements
-    let gamerScore = document.getElementById('score')
+    let gamerScore = document.getElementById('score');
     const newScore = parseInt(gamerScore.innerHTML) + 10;
     gamerScore.innerHTML = newScore;
 
@@ -206,7 +207,7 @@ function gameOver(){
     let timeUp = document.getElementById('game-over');
     setTimeout(()=>{
         timeUp.classList.add('visible');
-        console.log("game over")   
+        console.log("game over");
     }, 200);
     
     // 3 seconds to allow for game over music
@@ -233,7 +234,7 @@ function victory(){
     victoryMusic.play();
 
     // victory message
-    victoryText.innerHTML = `Congrats! You scored ${gamerScore.innerHTML}`
+    victoryText.innerHTML = `Congrats! You scored ${gamerScore.innerHTML}`;
     
     // victory overlay display
     gameFinish.classList.add('visible');
@@ -256,19 +257,3 @@ function restart(){
     
     console.log("rstart");
 }
-
-let vol = document.getElementById('volume');
-
-function sound(){
-    if(!gameMusic.play()){
-        gameMusic.play();
-    }   else {
-        gameMusic.pause();
-    }
-}
-
-vol.addEventListener('click', sound);
-
-
-
-
