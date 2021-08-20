@@ -245,6 +245,18 @@ function restart(){
     console.log("rstart")
 }
 
+let vol = document.getElementById('volume');
+
+function sound(){
+    if(!gameMusic.play()){
+        gameMusic.play();
+    }   else {
+        gameMusic.pause();
+    }
+}
+
+vol.addEventListener('click', sound);
+
 
 
 
