@@ -167,6 +167,8 @@ function correctPair() {
     // events if cards match
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
     firstCard = null;
 }
  
@@ -219,9 +221,13 @@ function gameOver(){
  
 function victory(){
     let gameFinish = document.getElementById('victory');
+    let victoryText = document.getElementById('victory-text');
     
     gameMusic.pause();
     victoryMusic.play();
+
+    // victory message
+    victoryText.innerHTML = `Congrats! You scored ${gamerScore.innerHTML}`
     
     // victory overlay display
     gameFinish.classList.add('visible');
