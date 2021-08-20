@@ -35,25 +35,56 @@ The colors of choosing for the overlays also involved a great deal of deliberati
 
 
 ## Features
+
+### Existing Features
 For this milestone project, I have ran with the idea of inlcuding 2 pages: The Menu screen and the Game screen Each screen will be accompanied by the core styles I have decided to use, while also differing in their own respective layouts.
 
-### Menu.html
+#### Menu.html
 The Menu screen meets the user and makes them fully aware of the core idea and nature of the website. The backdrop, a tribute to a typical nintendo video game allowing the user to identify with any potential video games they may or may not have encountered throughout their lifetime. The hero image/ title is too written in a nintendo/super mario font-style making the user feel directly acquainted with the nature of the video game. 
 
 Along with the background image and hero title, I have decided to make the dropdown menu/options in a style similiar to that of what a user would typically see in any super mario video game once they have entered the first screen of the game. Each option is given its on block within a bigger grey block to give the sense that they are playing an actual Nintendo Game. Each option will direct the user to a new html page within the website while the heading of each page will direct the user back to the main menu of the website.
 
-### Start-game.html
+#### Start-game.html
 The main part of the game will be enlisted within the start-game page. The structure of the page will make it very evident as to how the game will be played. The main heading will be at the top of the screen but in a smaller font-size, just to give more importance to the main function of this page. There will  be a game info section, detailing the number of flips, the time left in the game, and the score the player has at any given time throughout the game (each correct match will be rewarded with 10 points). 
 
 The game itself will be a simple card matching memory game, whereby the user has to match up the correct icons with each other in the game until every card within the game section has been matched up. The game will be accompanied by background music, while each correct/incorrect flip will be accompanied by different sounds and alerts. When the game comes to completion, either through the timer running out or the user completing the match up sequence, a text overlay with the title of either "Game over" or "Victory!" will be displayed. This will take up the entire length and width of the screen with a slightly dark background. The user will then have the option to contribute to the high score leaderboard with their own name and score while also having the option to begin the game right over again.
 
 To allow for more interest from the player I decided to include a 'record-time' parameter in the game info section. This will allow the user to challenge themself to beat their current score and to improve on it as much as they can whenever they play the game. Using localStorage within the browser, a player's best time will always remain within the parameter above the game area. 
 
-### Overlays
+#### Overlays
 
 When the player has gone through either process an overlay with either the 'Victory' or 'Game Over' banner will be displayed along with the option to restart/play again. Accompanying each overlay will be the option to post one's own score up to the global leaderboard.
 
 The leaderboard page enlists the top scorers of the game. By including this page to the website users will now have a visual competition upon which to improve their own game in. Using API's allows for a user to contirbute with their own score to the overall leaderboard upon completing the game either through victory (in correctly matching all cards) or through the game ending prematurely (time running out). 
+
+### Features Left to Implement
+
+#### Global Leaderboard
+
+Upon going through the next stage of the course which deals with backend platforms and systems It would improve the overall interest in the game (from different users) if they were not just challenging their own record scores but also those of anyone who has access to the site. In setting up a global storage system that allows for players from anywhere in the world to contribute with their score to a leaderboard, the game would be a lot more enticing and challenging to play as a potential user.
+
+## Technologies and Resources Used
+
+### Languages
+- HTML5
+- CSS
+- JavaScript
+- jQuery
+
+### Resources
+
+-The CDNfonts website was utilised for the Nintendo styled lettering for the game.
+-Pinterest was used for the the character icons for the matching element of the game.
+-Unsplash for the nintendo logo placed on the back of each card.
+-Gitpod was used as the IDE workspace which allowed me to construct the website and Git was used for version control and to Push code to GitHub.
+-Balsamiq was used to convey wireframes upon which to make my ideas.
+-Font awesome was used for the star ratings to signify how well the player/user was doing at any given stage throughout the game.
+
+## Testing
+### Manual Testing
+As with all javaScript projects, correct use of the console.log() function is pivotal to self testing of different functions throughout the span of the project. By logging a handwritten message into a function I was able to immediately see if functions were being recognised in the DOM. 
+
+- JSHint was also used as a means of automating the testing of all the code, to validate and ensure that all javascript conventions were being thoroughly followed throughout the project lifespan.
 
 ## Bugs
 
