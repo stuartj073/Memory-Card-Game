@@ -15,7 +15,8 @@ let secondCard;
 let lock = false;
 let matchedCards = 0;
 let countFlippedCards = 0;
-let timeTaken = parseInt(totalTime) - 
+  
+
 
 // game sounds
 const gameMusic = new Audio("./sounds/superMarioBros.mp3");
@@ -192,11 +193,6 @@ function increaseScore(){
     const newScore = parseInt(gamerScore.innerHTML) + 10;
     gamerScore.innerHTML = newScore;
 
-    // updating the users high score
-    if(gamerScore.innerHTML > highScore.innerHTML){
-        highScore.innerHTML = gamerScore.innerHTML;
-        localStorage.setItem(saveKeyScore, highScore.innerHTML);
-    }
 }
 
 function gameOver(){
@@ -223,6 +219,15 @@ function gameOver(){
 function victory(){
     let gameFinish = document.getElementById('victory');
     let victoryText = document.getElementById('victory-text');
+    let timeTaken = 50 - parseInt(totalTime.innerHTML);
+
+    // updating the users high score
+    if(timeTaken < highScore.innerHTML){
+        highScore.innerHTML = timeTaken;
+        localStorage.setItem(saveKeyScore, highScore.innerHTML);
+    }
+
+    console.log(timeTaken);
     
     gameMusic.pause();
     victoryMusic.play();

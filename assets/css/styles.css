@@ -181,6 +181,7 @@ h2 {
     -ms-flex-pack: distribute;
         justify-content: space-around;
 }
+
 .game-titles {
     font-size:3rem;
     padding:0 10px;
