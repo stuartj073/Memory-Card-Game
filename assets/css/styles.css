@@ -351,6 +351,14 @@ h2 {
             animation: overlay-grow 500ms forwards;
 }
 
+#victory-text {
+    font-size:3rem;
+}
+
+#victory {
+    color:white;
+}
+
 /********************************* MEDIA QUERIES ***/
 
 @media only screen and (max-width:380px){
