@@ -9,12 +9,12 @@ Memory Mario is a memory card game set up to transport user's to a world already
 - As a user, I want to have some way of seeing how 
 - I am getting on in the game whilst also keeping an eye on the time limitation
 - As a user, I want to be able to access the game on all platforms.
-- As a user I want to be able to start and stop the game whenever I choose.
-- As a user I want to be able to choose when to turn off and on the music.
-- As a user I want to be able to contribute to the overall global leader-board as to challenge me and get myself more focused on getting better.
-- As a user I want to hear the game sounds (if I want to) that accompany each click of a card ,match of a pair or incorrect match of a pair as I play the game.
+- As a user I want to be able to contribute to the local leader-board as to challenge me and get myself more focused on getting better.
+- As a user I want to hear the game sounds that accompany each click of a card ,match of a pair or incorrect match of a pair as I play the game.
 - As an owner I want to facilitate the overall needs of the user.
-- As an owner I want to allow users to voluntarily contribute to the overall improvement of the game via a suggestions box.
+- As an owner I want to provide a local storage system as to entice the user to come back and to try and bea their current high score.
+- As an owner I want to present the website in a very clear manner with un-ambigious colours as to not be presenting the potential user with colour overload or a website that just doesn't make sense design-wise.
+
 
 ## UX/UI 
 
@@ -35,7 +35,7 @@ The colors of choosing for the overlays also involved a great deal of deliberati
 
 
 ## Features
-For this milestone project, I have ran with the idea of inlcuding 4 pages: The Menu screen, the Game screen, the settings screen and the high scores screen. Each screen will be accompanied by the core styles I have decided to use, while also differing in their own respective layouts.
+For this milestone project, I have ran with the idea of inlcuding 2 pages: The Menu screen and the Game screen Each screen will be accompanied by the core styles I have decided to use, while also differing in their own respective layouts.
 
 ### Menu.html
 The Menu screen meets the user and makes them fully aware of the core idea and nature of the website. The backdrop, a tribute to a typical nintendo video game allowing the user to identify with any potential video games they may or may not have encountered throughout their lifetime. The hero image/ title is too written in a nintendo/super mario font-style making the user feel directly acquainted with the nature of the video game. 
@@ -46,6 +46,8 @@ Along with the background image and hero title, I have decided to make the dropd
 The main part of the game will be enlisted within the start-game page. The structure of the page will make it very evident as to how the game will be played. The main heading will be at the top of the screen but in a smaller font-size, just to give more importance to the main function of this page. There will  be a game info section, detailing the number of flips, the time left in the game, and the score the player has at any given time throughout the game (each correct match will be rewarded with 10 points). 
 
 The game itself will be a simple card matching memory game, whereby the user has to match up the correct icons with each other in the game until every card within the game section has been matched up. The game will be accompanied by background music, while each correct/incorrect flip will be accompanied by different sounds and alerts. When the game comes to completion, either through the timer running out or the user completing the match up sequence, a text overlay with the title of either "Game over" or "Victory!" will be displayed. This will take up the entire length and width of the screen with a slightly dark background. The user will then have the option to contribute to the high score leaderboard with their own name and score while also having the option to begin the game right over again.
+
+To allow for more interest from the player I decided to include a 'record-time' parameter in the game info section. This will allow the user to challenge themself to beat their current score and to improve on it as much as they can whenever they play the game. Using localStorage within the browser, a player's best time will always remain within the parameter above the game area. 
 
 ### Overlays
 
