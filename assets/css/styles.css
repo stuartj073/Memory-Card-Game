@@ -212,34 +212,40 @@ h2 {
 }
 
 .card {
-    /*background-image:url("../images/1368664.jpg");
-    background-repeat:no-repeat;
-    background-position:center;*/
     height:140px;
     width:130px;
     margin:1.5px;
     border: 1.5px solid #777777;
     background-color:white;
     position:relative;
-    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+            transform-style:preserve-3d;
+    -webkit-transition: transform.5s;
+    -o-transition: transform.5s;
     transition: transform.5s;
     cursor:pointer;
 }
 
 .front {
-    transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+            transform:rotateY(180deg);
 }
 
-
 .card.flipC {
-    transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+            transform:rotateY(180deg);
     cursor:auto;
-    
 } 
 
 .card:active {
-    transform:scale(.95);
+    -webkit-transform:scale(.95);
+        -ms-transform:scale(.95);
+            transform:scale(.95);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -o-transition: transform .2s;
     transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
 }
 
 .front, .back {
@@ -324,9 +330,12 @@ h2 {
 
 }
 
-  .overlay-text.visible {
+.overlay-text.visible {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    animation: overlay-grow 500ms forwards;
+    -webkit-animation: overlay-grow 500ms forwards;
+            animation: overlay-grow 500ms forwards;
 }
 
 /********************************* MEDIA QUERIES ***/
