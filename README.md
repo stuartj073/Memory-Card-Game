@@ -17,15 +17,22 @@ Memory Mario is a memory card game set up to transport user's to a world already
 - As an owner I want to allow users to voluntarily contribute to the overall improvement of the game via a suggestions box.
 
 ## UX/UI 
-The emphasis of the game is to mimic the layout of the original Super Mario Bro's gameboy theme. The font was downloaded through a third source to further push the Nintendo feel of the game itself. The landing page is set up in a simple nintendo game fashion whereby options are limited and the game is made abundantly clear. 
 
-Each option is sectioned off in block div elements and has a hover effect added on to them to allow the user a visual represantation of where their cursor is pointed toward. The player can choose to continue on to the start game page which will in turn start the game automatically. If the player wants to have a run down of the game rules, they can do so by pressing the game rules button on the home screen (they can also subsequently decide to do so in the actual game page too).
+### Landing Page
+The emphasis of the game is to mimic the layout of the original Super Mario Bro's gameboy theme. The font was downloaded through a third source to further push the Nintendo feel of the game itself. The landing page is set up in a simple nintendo game fashion whereby options are limited and the game is made abundantly clear. ![Landing page UX](screenshots/landingpage.png)
 
-The colours I have decided to utilise for the game include a bright red '#E52521' hex colour, akin to the iconic outfit sported by Mario, '#303956' for the main body writing and '#CDC8DA' for the background color of the main menu and the title behind the heading for the game page.
+Each option is sectioned off in block div elements and has a hover effect added on to them to allow the user a visual represantation of where their cursor is pointed toward. The player can choose to continue on to the start game page which will in turn start the game automatically. If the player wants to have a run down of the game rules, they can do so by pressing the game rules button on the home screen. The rules box was made in a style that would make for easy reading. Black font color on white background, as well as the background of the modal being dimmed to allow the user to zone in on the exact purpose of the game. ![Rules UX](screenshots/rules.png)
 
-The reason behind the red colour of the title is both self-explanatory and purposeful. The main reason behind it was actually to print it out over the rather dim colours of the background image chosen. I felt that it not only served the atmosphere of the game but it also added value in standing out over the light blue sky as seen in the background image.
+The colours I have decided to utilise for the game include a bright red '#E52521' hex colour, akin to the iconic outfit sported by Mario, '#303956' for the main body writing and '#CDC8DA' for the background color of the main menu and the title behind the heading for the game page. The reason behind the red colour of the title is both self-explanatory and purposeful. The main reason behind it was actually to emphasise it over the backdrop (background-color of #CDC8DA). I felt that it not only served the atmosphere of the game but it also added value in standing out over the light blue sky as seen in the background image. ![Red title](screenshots/titlecolor.png)
 
-The font colour and background colour were chosen in tandem with eachother. After much experimentation of choosing the two colours I decided upon the two as seen as I felt they worked brilliantly to project the game options and the the game heading for the start game page.
+### Game Page
+The font colour and background colour were chosen in tandem with eachother. After much experimentation in choosing the two colours I decided upon the two as seen as I felt they worked brilliantly to project the game options and the the game heading for the start game page. ![Game info](screenshots/gameInfo.png)
+
+The colors of choosing for the overlays also involved a great deal of deliberation. I wanted to dim the background as much as possible as to communicate to the user that the game had come to a halt (either through victory or loss). For the game over overlay I decided to go with a dark barely translucent background nearly completely black with a slightly bluish font color (#627E9A). As for the victory overlay I decided to adopt more or less the same styles as for the game over lay with the inclusion of a white font for the writing, to differentiate from the font color shown when a loss has occured.
+![Victory](screenshots/victory.png)
+![gameOver](screenshots/gameOver.png)
+
+
 
 ## Features
 For this milestone project, I have ran with the idea of inlcuding 4 pages: The Menu screen, the Game screen, the settings screen and the high scores screen. Each screen will be accompanied by the core styles I have decided to use, while also differing in their own respective layouts.
