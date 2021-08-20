@@ -15,6 +15,7 @@ let secondCard;
 let lock = false;
 let matchedCards = 0;
 let countFlippedCards = 0;
+let timeTaken = parseInt(totalTime) - 
 
 // game sounds
 const gameMusic = new Audio("./sounds/superMarioBros.mp3");

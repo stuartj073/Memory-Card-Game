@@ -175,10 +175,12 @@ h2 {
 /********************************* GAME AREA ***/
 
 .game-info {
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
-
 .game-titles {
     font-size:3rem;
     padding:0 10px;
@@ -197,18 +199,22 @@ h2 {
 }
 
 .game-area {
+    display:-ms-grid;
     display:grid;
+    -ms-grid-columns: (auto)[4];
     grid-template-columns: repeat(4, auto);
     margin-top:10px;
-    justify-content: center;
-    perspective:2000px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-perspective:2000px;
+            perspective:2000px;
 }
 
 .card-back {
     background-color:black;
     height:160px;
     width:110px;
-    /*background:url("assets/images/1368664.jpg") no-repeat no-repeat center;*/
 }
 
 .card {
@@ -254,7 +260,8 @@ h2 {
     height: 120px;
     width: 120px;
     position:absolute;
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
 }
 
 /********************************* LEADERBOARD ***/
