@@ -322,19 +322,23 @@ h2 {
 
 }
 
-@media only screen and (max-width:470px){
+@media only screen and (max-width:490px){
     .card {
-        height:90px;
-        width:90px;
+        height:80px;
+        width:80px;
     }
 
     .front, .back {
-        height:100px;
-        width:100px;
+        height:70px;
+        width:70px;
     }
 
     .game-menu {
         top:40%;
+    }
+
+    .game-area-top h2 {
+        font-size: 3rem;;
     }
 }
 
@@ -358,7 +362,7 @@ h2 {
         }
 
         .game-area-top h2 {
-            font-size:6rem;
+            font-size:4rem;
         }
         
         .overlays {
@@ -380,5 +384,25 @@ h2 {
     .heading-backdrop {
         width:100%;
         left:0;
+    }
+}
+
+@media only screen and (max-width:400px){
+    .card {
+        height:70px;
+        width:70px;
+    }
+
+    .front, .back {
+        height:65px;
+        width:65px;
+    }
+
+    .game-titles{
+        font-size: 1.5rem;
+    }
+
+    .game-heading h2 {
+        font-size: 3rem;;
     }
 }

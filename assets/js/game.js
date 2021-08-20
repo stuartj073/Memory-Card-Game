@@ -7,7 +7,7 @@ const gameOverlay = document.getElementById('game-over');
 const victoryOverlay = document.getElementById('victory');
 const saveKeyScore = "highscore";
 const highScore = document.getElementById('top-score');
-
+const startTime = totalTime.innerHTML;
 
 // variables
 let firstCard;
@@ -42,7 +42,7 @@ if(document.readyState === "loading") {
 function startGame(){
     // set to default parameters for game start
     // default settings
-    const startTime = totalTime.innerHTML;
+    totalTime.innerHTML = startTime;
     gamerScore.innerHTML = 0;
     flips.innerHTML = 0;
     shuffleCards();
