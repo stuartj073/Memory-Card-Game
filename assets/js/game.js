@@ -242,7 +242,7 @@ function restart(){
     victoryOverlay.classList.remove('visible');
     startGame();
     
-    console.log("rstart")
+    console.log("rstart");
 }
 
 let vol = document.getElementById('volume');

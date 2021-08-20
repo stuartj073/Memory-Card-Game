@@ -22,12 +22,15 @@
             </div>
             <div class="game-menu">
                 <div class="game-options"> <a href="start-game.html">Start Game</a></div>
-                <div class="game-options" onclick="gameRule();" id="game-rules">How to play
-                    <div class="rules-modal">
-                        <h2>To win</h2>
-                        <p>In order to achieve victory in the game, the user must connect each icon with it's corresponding
-                        pair within the given specified time parameter. If the player fails to connect all cards within the time
-                        given then this will ensue with a defeat for the player. 
+                <div class="game-options" id="rules">Game Rules</div>
+                
+                <!-- taken from https://www.w3schools.com/howto/howto_css_modals.asp -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <p>The rules are simple. The player must match as many cards as possible within the given time-frame. 
+                        If they succesfully do this within the time frame, it will be recorded as a victory. If not, then it will result in
+                        a game over. Best of Luck! 
                         </p>
                     </div>
                 </div>
