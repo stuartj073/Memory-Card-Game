@@ -1,4 +1,6 @@
 # Memory Mario
+(screenshots/amiresponsive.png)
+
 Memory Mario is a memory card game set up to transport user's to a world already familiar or one that was familiar a long time ago. Using the main characters from Super Mario and Super Smash bro's, the user's must match up the correct characters with each other in order to complete the game in the specified time parameter. The game has in itself a local storage system that allows each individual player to challenge their high score upon each return to the site. The game music and sounds are all included as to add to the feel of a retro nintendo styled game. 
 
 If you would like to visit the site and try out the game for yourself, feel free to do so by clicking this [link].(https://stuartj073.github.io/Memory-Card-Game/index.html)
@@ -94,7 +96,7 @@ As with all javaScript projects, correct use of the console.log() function is pi
 - In tandem with the chrome developer tools, I was constantly checking how the deployed site was functioning on my Samsung S10 phone, as well as on my brother's iPhone 8.
 
 #### HTML & CSS
-- The HTML and CSS files were passed through the code validator [W3C](https://validator.w3.org/). There were a few errors found throughout the HTML such as extra closing div tags and an id being used by two span elements. There were no issues found with my CSS code. For the app.js and index.js there were a few missing semi-colons, undefined variables and unused variables. All issues were looked at and fixed.
+- The HTML and CSS files were passed through the code validator [W3C](https://validator.w3.org/). There were a few errors found throughout the HTML such as extra closing div tags and an id being used by two span elements. There were no issues found with my CSS code. For the app.js and index.js there were a few missing semi-colons, undefined variables and unused variables. All issues were looked at and fixed. All code ran through the validators went through fine thereafter.
 
 ## Bugs
 
