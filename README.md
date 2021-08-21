@@ -13,6 +13,7 @@ If you would like to visit the site and try out the game for yourself, feel free
 - As a user, I want to be able to access the game on all platforms.
 - As a user I want to be able to contribute to the local leader-board as to challenge me and get myself more focused on improving.
 - As a user I want to hear the game sounds that accompany each click of a card , match of a pair or incorrect match of a pair as I play the game.
+- As a user I want to actively choose when to listen to game music and when not to using a sound toggle button.
 - As an owner I want to facilitate the overall needs of the user.
 - As an owner I want to provide a local storage system as to entice the user to come back and to try and bea their current high score.
 - As an owner I want to present the website in a very clear manner with un-ambigious colours as to not be presenting the potential user with colour overload or a website that just doesn't make sense design-wise.
@@ -28,11 +29,13 @@ Each option is sectioned off in block div elements and has a hover effect added 
 The colours I have decided to utilise for the game include a bright red '#E52521' hex colour, akin to the iconic outfit sported by Mario, '#303956' for the main body writing and '#CDC8DA' for the background color of the main menu and the title behind the heading for the game page. The reason behind the red colour of the title is both self-explanatory and purposeful. The main reason behind it was actually to emphasise it over the backdrop (background-color of #CDC8DA). I felt that it not only served the atmosphere of the game but it also added value in standing out over the light blue sky as seen in the background image. ![Red title](screenshots/titlecolor.png)
 
 ### Game Page
-The font colour and background colour were chosen in tandem with eachother. After much experimentation in choosing the two colours I decided upon the two as seen as I felt they worked brilliantly to project the game options and the the game heading for the start game page. ![Game info](screenshots/gameInfo.png)
+The font colour and background colour were chosen in tandem with eachother. After much experimentation in choosing the two colours I decided upon the two as seen as I felt they worked brilliantly to project the game options and the the game heading for the start game page. I also thought of the styling behind the play button and the sound on/off button. I chose to adopt a greyish '#777777' background with a black color for the 'play game' button. As for the sound on and off I wanted to keep things as simple as possible with green for "SOUND ON", and red for "SOUND OFF". ![Game info](screenshots/gameInfo.png)
 
 The colors of choosing for the overlays also involved a great deal of deliberation. I wanted to dim the background as much as possible as to communicate to the user that the game had come to a halt (either through victory or loss). For the game over overlay I decided to go with a dark barely translucent background nearly completely black with a slightly bluish font color (#627E9A). As for the victory overlay I decided to adopt more or less the same styles as for the game over lay with the inclusion of a white font for the writing, to differentiate from the font color shown when a loss has occured.
 ![Victory](screenshots/victory.png)
 ![gameOver](screenshots/gameOver.png)
+
+
 
 
 
