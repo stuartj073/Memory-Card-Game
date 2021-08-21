@@ -222,11 +222,6 @@ h2 {
     cursor: pointer;
 }
 
-button {
-    display:flex;
-    font-size: :1rem;
-}
-
 .game-titles i  {
     font-weight:500;
     font-size:3rem;
@@ -242,7 +237,6 @@ button {
 .game-area {
     display:-ms-grid;
     display:grid;
-    -ms-grid-columns: (auto)[4];
     grid-template-columns: repeat(4, auto);
     margin-top:10px;
     -webkit-box-pack: center;

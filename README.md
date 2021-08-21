@@ -94,7 +94,7 @@ As with all javaScript projects, correct use of the console.log() function is pi
 - In tandem with the chrome developer tools, I was constantly checking how the deployed site was functioning on my Samsung S10 phone, as well as on my brother's iPhone 8.
 
 #### HTML & CSS
-- The HTML and CSS files were passed through the code validator [W3C](https://validator.w3.org/).
+- The HTML and CSS files were passed through the code validator [W3C](https://validator.w3.org/). There were a few errors found throughout the HTML such as extra closing div tags and an id being used by two span elements. There were no issues found with my CSS code. For the app.js and index.js there were a few missing semi-colons, undefined variables and unused variables. All issues were looked at and fixed.
 
 ## Bugs
 
