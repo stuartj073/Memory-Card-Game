@@ -35,10 +35,6 @@ The colors of choosing for the overlays also involved a great deal of deliberati
 ![Victory](screenshots/victory.png)
 ![gameOver](screenshots/gameOver.png)
 
-
-
-
-
 ## Features
 
 ### Existing Features
@@ -113,6 +109,31 @@ A simple way of fixing this issue is to literally lock the board. In doing so we
 Upon testing the website on different devices it became apparent that there was an issue with apple devices (iOS software based devices). When the user was attempting to play the game and flip each card, the cards would either glitch in and out of their front and back classes, or the cards would simply flip over revealing an empty card. To get a better understanding of the issue at hand, please see the video attached. [video](https://drive.google.com/file/d/1x20q8UN-MaX6J3W4EFh7cG296om9MLEU/view?usp=sharing).
 
 Ofcourse, this was not ideal. However, upon looking at various articles and sites online it became apparent that this was in fact a very common issue that was occuring for many iOS users. The issue was iOS' handling of transformations and animations from browsers. The solution to this issue was recommended by my mentor through using the site [AutoPrefixer](https://autoprefixer.github.io/). The site was able to parse through the code and added any vendor prefixes as required for different operating systems. 
+
+## Deployment
+To Deploy the project
+
+I chose to host my website through Github Pages
+
+### Deploying
+On the menu above the project repositary choose the settings option.
+Scroll down through the settings page until the 'Pages' option appears and then click on to it.
+Within the 'Pages' option click the drop-down menu and under 'Source' select the Master Branch option.
+The page will then refresh automatically and the website will thus be deployed.
+To run the project locally:
+
+### Cloning
+Under the project repositary's name choose Clone or Download.
+Copy the URL that appears within the 'Clone with hTTPS' section.
+Open up Git Bash in whichever IDE you decide to use.
+Change to the working directory you want the cloned directory to be made.
+Type git clone and then paste the URL copied from Github.
+Press enter and you will then have a copy of the local clone.
+
+### Reflections 
+Throughout the project I aimed to keep consistent commit messages throughout the entire lifespan of its completion, however looking back over my older comments it became apparent that I wasn't sticking to the guidelines I have read about and prepped myself up to be doing. As soon as I began noticing that these messages were becoming slightly more ambiguous I began to get back into a more rigid manner of naming each commit as to make each commit to the repositary easily recognisable from each other.
+
+Another issue that may have been noticed upon looking through my commits is the constant chopping and changing of the time count for the game. This was only done as to check if the two overlays (game over and victory) were working as designed. I just wanted to make note of that here as I didn't do so throughout any of the commits I carried out. 
 
 ## Credit
 
