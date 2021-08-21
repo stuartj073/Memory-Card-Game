@@ -11,6 +11,7 @@ const saveKeyScore = "highscore";
 const highScore = document.getElementById('top-score');
 const startTime = totalTime.innerHTML;
 const sound = document.getElementById('sound');
+const playButton = document.getElementById('play');
 
 // variables
 let firstCard;
@@ -32,8 +33,25 @@ const victoryMusic = new Audio("./sounds/victory.mp3");
 if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", ()=>{
         console.log("Hibye");
-        startGame();
+        ready();
     });
+}
+
+function ready() {
+    // set to default parameters for game start
+    // default settings
+    totalTime.innerHTML = startTime;
+    gamerScore.innerHTML = 0;
+    flips.innerHTML = 0;
+    shuffleCards();
+
+    // save the user's high score to local storage
+    let scoreStr = highScore.innerHTML = localStorage.getItem(saveKeyScore);
+    if(scoreStr == null) {
+        highScore.innerHTML = 0;
+    }   else {
+        highScore.innerHTML = parseInt(scoreStr);
+    }
 }
 
 
@@ -44,23 +62,12 @@ if(document.readyState === "loading") {
 //         console.log(nums);
 //     }
 // }
+
+playButton.addEventListener('click', startGame, false);
  
 function startGame(){
-    // set to default parameters for game start
-    // default settings
-    totalTime.innerHTML = startTime;
-    gamerScore.innerHTML = 0;
-    flips.innerHTML = 0;
-    shuffleCards();
     
-    // save the user's high score to local storage
-    let scoreStr = highScore.innerHTML = localStorage.getItem(saveKeyScore);
-    if(scoreStr == null) {
-        highScore.innerHTML = 0;
-    }   else {
-        highScore.innerHTML = parseInt(scoreStr);
-    }
-
+    playButton.removeEventListener('click', startGame, false);
     // allow the user a few seconds before
     // game start
     setTimeout(()=>{
@@ -71,6 +78,8 @@ function startGame(){
             card.addEventListener('click', flipCard);
         });
     }, 2000);
+
+    console.log("play");
 }
 
 // function toggleSound(){

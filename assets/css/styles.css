@@ -23,7 +23,6 @@ body {
     /* font-family: 'Italiana', serif; */
     color:#303956;
     overflow-x: hidden;
-
 }
 
 a {
@@ -197,7 +196,7 @@ h2 {
     display:-ms-flexbox;
     display:flex;
     -ms-flex-pack: distribute;
-        justify-content:center;
+        justify-content:space-evenly;
 }
 
 #play {
