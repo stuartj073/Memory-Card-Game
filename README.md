@@ -75,10 +75,26 @@ Upon going through the next stage of the course which deals with backend platfor
 
 ## Testing
 ### Manual Testing
-As with all javaScript projects, correct use of the console.log() function is pivotal to self testing of different functions throughout the span of the project. By logging a handwritten message into a function I was able to immediately see if functions were being recognised in the DOM. 
+
+#### Chrome Developer Tools
+As with all javaScript projects, correct use of the console.log() function is pivotal to self testing of different functions throughout the span of the project. By logging a handwritten message into a function I was able to immediately see if functions were being recognised in the DOM. Chrome developer tools allowed for the easy recording of such functions as I was given immediate feedback as to the success of any function in question.
 
 - JSHint was also used as a means of automating the testing of all the code, to validate and ensure that all javascript conventions were being thoroughly followed throughout the project lifespan.
 
+- In order to check the responsiveness of the page on all devices, I actively engaged with the chrome developer tools and was constantly checking any minor changes mad through CSS on all the various different device screen resolutions as available in the developer tools. In using the dev tools function I was able to avidly check screen resolutions on :
+- Moto G4
+- Galaxy S5
+- iPhone 5/SE
+- iPhone 6/7/8
+- iPhone 6/8/8 Plus
+- iPhone X
+- iPad
+- iPad Pro
+- Surface Duo
+
+- In tandem with the chrome developer tools, I was constantly checking how the deployed site was functioning on my Samsung S10 phone, as well as on my brother's iPhone 8.
+
+#### HTML & CSS
 - The HTML and CSS files were passed through the code validator [W3C](https://validator.w3.org/).
 
 ## Bugs
