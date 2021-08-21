@@ -64,6 +64,7 @@ function ready() {
 // }
 
 playButton.addEventListener('click', startGame, false);
+sound.addEventListener('click', togglePlay);
  
 function startGame(){
     playButton.removeEventListener('click', startGame, false);
@@ -82,17 +83,24 @@ function startGame(){
     console.log("play");
 }
 
-function toggleSound(){
-    if(gameMusic.isPlaying){
-        gameMusic.pause();
-        sound.innerText = "SOUND OFF";
-        sound.style.color ="black";
-    
-    }   else if (!gameMusic.isPlaying) {
-        gameMusic.play();
-        sound.innerText = "SOUND ON";
-    }
-}
+let isPlaying = false;
+
+function togglePlay() {
+    // if true then pause, if not then play
+  isPlaying ? gameMusic.pause() : gameMusic.play();
+};
+
+// when the music is turned on
+gameMusic.onplaying = function() {
+  isPlaying = true;
+  sound.innerText = "SOUND ON";
+};
+
+// when the music is switched off
+gameMusic.onpause = function() {
+  isPlaying = false;
+  sound.innerText = "SOUND OFF";
+};
 
 function unFlipCards() {
     // to reset the cards
