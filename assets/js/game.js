@@ -88,7 +88,7 @@ let isPlaying = false;
 function togglePlay() {
     // if true then pause, if not then play
   isPlaying ? gameMusic.pause() : gameMusic.play();
-};
+}
 
 // when the music is turned on
 gameMusic.onplaying = function() {
@@ -143,7 +143,7 @@ function shuffleCards(){
     // of this random number
     for(let i=0;i<cards.length;i++){
         randN = Math.round(Math.random()*(15));
-        console.log("number is",randN)
+        console.log("number is",randN);
         cards[i].style.order = randN;
     }
 }
