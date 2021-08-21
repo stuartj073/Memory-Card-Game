@@ -110,6 +110,9 @@ Upon testing the website on different devices it became apparent that there was 
 
 Ofcourse, this was not ideal. However, upon looking at various articles and sites online it became apparent that this was in fact a very common issue that was occuring for many iOS users. The issue was iOS' handling of transformations and animations from browsers. The solution to this issue was recommended by my mentor through using the site [AutoPrefixer](https://autoprefixer.github.io/). The site was able to parse through the code and added any vendor prefixes as required for different operating systems. 
 
+### Favicon error
+An error that continued to come up in the console was an issue with favicon of the website. Upon searching on various different sites such as ![stack overflow](https://stackoverflow.com/) I came to the realisation that the error was showing up due to a netbeans issue and that to remove the error I simply had to include a small link in the head of each html file (as noted in each file).
+
 ## Deployment
 To Deploy the project
 
