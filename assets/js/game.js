@@ -19,6 +19,9 @@ let secondCard;
 let lock = false;
 let matchedCards = 0;
 let countFlippedCards = 0;
+let flips;
+let timeRemaining;
+let randN;
   
 
 
