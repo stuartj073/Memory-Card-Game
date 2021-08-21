@@ -66,11 +66,11 @@ function ready() {
 playButton.addEventListener('click', startGame, false);
  
 function startGame(){
-    
     playButton.removeEventListener('click', startGame, false);
     // allow the user a few seconds before
     // game start
     setTimeout(()=>{
+        lock = false;
         gameMusic.play();
         timeRemaining = setInterval(timer, 1000);
         cards.forEach((card, index)=>{
@@ -82,17 +82,17 @@ function startGame(){
     console.log("play");
 }
 
-// function toggleSound(){
-//     if(!gameMusic.isPlaying){
-//         gameMusic.play();
-//         sound.innerText = "SOUND ON";
-//         sound.style.color ="black";
+function toggleSound(){
+    if(gameMusic.isPlaying){
+        gameMusic.pause();
+        sound.innerText = "SOUND OFF";
+        sound.style.color ="black";
     
-//     }   else if (gameMusic.isPlaying) {
-//         gameMusic.pause();
-//         sound.innerText = "SOUND OFF";
-//     }
-// }
+    }   else if (!gameMusic.isPlaying) {
+        gameMusic.play();
+        sound.innerText = "SOUND ON";
+    }
+}
 
 function unFlipCards() {
     // to reset the cards
@@ -276,7 +276,9 @@ function restart(){
     // click to restart game
     gameOverlay.classList.remove('visible');
     victoryOverlay.classList.remove('visible');
-    startGame();
     
+    playButton.addEventListener('click', startGame);
+    ready();
+    lock = true;
     console.log("rstart");
 }
