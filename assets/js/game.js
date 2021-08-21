@@ -19,6 +19,7 @@ let lock = false;
 let matchedCards = 0;
 let timeRemaining;
 let randN;
+let flips;
   
 
 
