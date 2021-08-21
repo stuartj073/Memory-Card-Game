@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/super-mario-bros-alphabet');*/
+@import url('https://fonts.cdnfonts.com/css/super-mario-bros-alphabet');
 
 
 /********************************* GENERAL ***/
@@ -201,10 +201,16 @@ h2 {
 
 #play {
     letter-spacing: 1px; 
-    border:1.5px solid #888;   
+    border:1.5px solid black;   
     padding:5px;
     border-radius:10%;
     color: black;
+    background-color:#777777;
+    cursor:pointer;
+}
+
+.game-titles #play:active {
+    transform:scale(.95);
 }
 
 #sound {
@@ -213,6 +219,7 @@ h2 {
     padding:5px;
     border-radius:10%;
     color: #888;
+    cursor: pointer;
 }
 
 button {
