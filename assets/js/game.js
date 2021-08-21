@@ -3,7 +3,6 @@
 // constants
 const cards = Array.from(document.getElementsByClassName('card'));
 const gamerScore = document.getElementById('score');
-const stars = document.getElementById('star-rating');
 const totalTime = document.getElementById('time');
 const gameOverlay = document.getElementById('game-over');
 const victoryOverlay = document.getElementById('victory');
@@ -18,7 +17,6 @@ let firstCard;
 let secondCard;
 let lock = false;
 let matchedCards = 0;
-let countFlippedCards = 0;
 let flips;
 let timeRemaining;
 let randN;
