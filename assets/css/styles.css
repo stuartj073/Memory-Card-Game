@@ -148,7 +148,7 @@ h2 {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 40%; /* Could be more or less, depending on screen size */
+    width: 80%; /* Could be more or less, depending on screen size */
     font-size: 2rem;;
 }
 
@@ -336,7 +336,7 @@ h2 {
 }
 
 #restart {
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: center;
     display:block;
     justify-content: center;
@@ -352,7 +352,7 @@ h2 {
 }
 
 #victory-text {
-    font-size:3rem;
+    font-size:4rem;
 }
 
 #victory {
@@ -361,34 +361,47 @@ h2 {
 
 /********************************* MEDIA QUERIES ***/
 
-@media only screen and (max-width:380px){
-    .game-heading h2 {
-        font-size: 2rem;;
+@media only screen and (max-width:1234px){
+    .game-heading{
+        font-size: 6rem;
+    }
+
+    .heading-backdrop {
+        width:100%;
+        left:0;
     }
 }
 
-@media only screen and (max-width:440px){
-    .game-heading h2 {
-        font-size: 3rem;;
-    }
-    
+@media only screen and (max-width:590px) {
     .card {
-        height:70px;
-        width:70px;
+        height:110px;
+        width:110px;
     }
 
     .front, .back {
-        height:70px;
-        width:70px;
+        height:100px;
+        width:100px;
     }
 
-    /* .game-area {
-        display:grid;
-        grid-template-columns: repeat(2, auto);
-        justify-content: center;
-        perspective:2000px;
-    } */
+    .game-titles {
+        font-size: 2rem;
+    }
 
+    .game-titles i {
+        font-size:2rem;
+    }
+
+    .game-area-top h2 {
+        font-size:4rem;
+    }
+    
+    .overlays {
+        font-size: 6rem;
+    }
+
+    .game-heading h2 {
+        font-size: 4rem;
+    }
 }
 
 @media only screen and (max-width:490px){
@@ -403,53 +416,41 @@ h2 {
     }
 
     .game-area-top h2 {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width:460px){
+    .card {
+        height:80px;
+        width:80px;
+    }
+
+    .front, .back {
+        height:70px;
+        width:70px;
+    }
+}
+
+@media only screen and (max-width:440px){
+    .game-heading h2 {
         font-size: 3rem;;
     }
-}
-
-@media only screen and (max-width:590px) {
-        .card {
-            height:110px;
-            width:110px;
-        }
     
-        .front, .back {
-            height:100px;
-            width:100px;
-        }
-
-        .game-titles {
-            font-size: 2rem;
-        }
-
-        .game-titles i {
-            font-size:2rem;
-        }
-
-        .game-area-top h2 {
-            font-size:4rem;
-        }
-        
-        .overlays {
-            font-size: 6rem;
-        }
-
-        .game-heading h2 {
-            font-size: 6rem;;
-        }
+    .card {
+        height:70px;
+        width:70px;
     }
 
-}
-
-@media only screen and (max-width:1234px){
-    .game-heading{
-        font-size: 6rem;
+    .front, .back {
+        height:60px;
+        width:60px;
     }
 
-    .heading-backdrop {
-        width:100%;
-        left:0;
+    .modal-content {
+        font-size: 1.5rem;
     }
+
 }
 
 @media only screen and (max-width:400px){
@@ -468,6 +469,28 @@ h2 {
     }
 
     .game-heading h2 {
-        font-size: 3rem;;
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width:380px){
+    .game-heading h2 {
+        font-size: 2rem;;
+    }
+
+    .modal-content{
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width:380px){
+    .card {
+        height:60px;
+        width:60px;
+    }
+
+    .front, .back {
+        height:50px;
+        width:50px;
     }
 }
