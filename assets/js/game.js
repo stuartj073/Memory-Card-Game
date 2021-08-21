@@ -29,6 +29,9 @@ const flipSound = new Audio("./sounds/flip.mp3");
 const gameOverMusic = new Audio("./sounds/gameOver.mp3");
 const victoryMusic = new Audio("./sounds/victory.mp3");
 
+playButton.addEventListener('click', startGame, false);
+sound.addEventListener('click', togglePlay);
+
  
 
 if(document.readyState === "loading") {
@@ -55,18 +58,6 @@ function ready() {
     }
 }
 
-
-// function countDown(){
-//     let nums = [3, 2, 1];
-    
-//     for(let i=0; i<nums.length; i++){
-//         console.log(nums);
-//     }
-// }
-
-playButton.addEventListener('click', startGame, false);
-sound.addEventListener('click', togglePlay);
- 
 function startGame(){
     playButton.removeEventListener('click', startGame, false);
     // allow the user a few seconds before
