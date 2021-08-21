@@ -1,13 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/super-mario-bros-alphabet');*/
-/* @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap'); */
+
 
 /********************************* GENERAL ***/
-
-*{
-    margin:0;
-    border:0;
-    padding:0;
-}
 
 html,body
 {
@@ -16,6 +10,12 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
+}
+
+*{
+    margin:0;
+    border:0;
+    padding:0;
 }
 
 body {
