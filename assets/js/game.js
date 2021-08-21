@@ -47,6 +47,7 @@ function ready() {
     gamerScore.innerHTML = 0;
     flips.innerHTML = 0;
     shuffleCards();
+    gameMusic.currentTime = 0;
 
     // save the user's high score to local storage
     let scoreStr = highScore.innerHTML = localStorage.getItem(saveKeyScore);
