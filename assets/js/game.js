@@ -10,6 +10,7 @@ const victoryOverlay = document.getElementById('victory');
 const saveKeyScore = "highscore";
 const highScore = document.getElementById('top-score');
 const startTime = totalTime.innerHTML;
+const sound = document.getElementById('sound');
 
 // variables
 let firstCard;
@@ -63,6 +64,7 @@ function startGame(){
     // allow the user a few seconds before
     // game start
     setTimeout(()=>{
+        gameMusic.play();
         timeRemaining = setInterval(timer, 1000);
         cards.forEach((card, index)=>{
             card.key = index;
@@ -71,15 +73,17 @@ function startGame(){
     }, 2000);
 }
 
-function toggleSound(){
-    if(!gameMusic().isPlaying()){
-        gameMusic.play();
-    }   else {
-        gameMusic.pause();
-    }
-
-    console.log("sound on")
-}
+// function toggleSound(){
+//     if(!gameMusic.isPlaying){
+//         gameMusic.play();
+//         sound.innerText = "SOUND ON";
+//         sound.style.color ="black";
+    
+//     }   else if (gameMusic.isPlaying) {
+//         gameMusic.pause();
+//         sound.innerText = "SOUND OFF";
+//     }
+// }
 
 function unFlipCards() {
     // to reset the cards
@@ -141,7 +145,7 @@ function flipCard(){
     flips.innerText++;
     this.classList.add('flipC');
     flipSound.play();
-    gameMusic.play();
+    // gameMusic.play();
     
     if(!flippedCard){
         // first card
