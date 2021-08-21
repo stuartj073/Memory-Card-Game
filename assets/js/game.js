@@ -35,6 +35,7 @@ if(document.readyState === "loading") {
     });
 }
 
+
 // function countDown(){
 //     let nums = [3, 2, 1];
     
@@ -68,6 +69,16 @@ function startGame(){
             card.addEventListener('click', flipCard);
         });
     }, 2000);
+}
+
+function toggleSound(){
+    if(!gameMusic().isPlaying()){
+        gameMusic.play();
+    }   else {
+        gameMusic.pause();
+    }
+
+    console.log("sound on")
 }
 
 function unFlipCards() {
@@ -250,7 +261,6 @@ function victory(){
 
 function restart(){
     // click to restart game
-    
     gameOverlay.classList.remove('visible');
     victoryOverlay.classList.remove('visible');
     startGame();

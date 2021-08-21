@@ -189,7 +189,7 @@ h2 {
 
 .game-titles {
     font-size:3rem;
-    padding:0 10px;
+    padding:0 5px;
 }
 
 .game-titles i  {
@@ -198,10 +198,10 @@ h2 {
     color:black;
 }
 
-.volume {
+#volume {
     font-weight:400;
     color:black;
-    font-size:10px;
+    font-size:5rem;
 }
 
 .game-area {

@@ -1,16 +1,18 @@
 # Memory Mario
-Memory Mario is a memory card game set up to transport user's to a world already familiar or one that was familiar a long time ago. Using the main characters from Super Mario and Super Smash bro's, the user's must match up the correct characters with each other in order to complete the game in the specified amount of time of their own choosing. The game has a clear three tier difficulty set up whereby the user can choose to play under a different time parameter which is associated then with the set difficulty of a user's choosing.
+Memory Mario is a memory card game set up to transport user's to a world already familiar or one that was familiar a long time ago. Using the main characters from Super Mario and Super Smash bro's, the user's must match up the correct characters with each other in order to complete the game in the specified time parameter. The game has in itself a local storage system that allows each individual player to challenge their high score upon each return to the site. The game music and sounds are all included as to add to the feel of a retro nintendo styled game. 
+
+If you would like to visit the site and try out the game for yourself, feel free to do so by clicking this [link].(https://stuartj073.github.io/Memory-Card-Game/index.html)
+
 
 ## User Stories
 
 - As a user, I want to access a presentable website.
 - As a user, I want to play an interactive game that allows me to have fun.
 - As a user, I want to be challenged when playing the game.
-- As a user, I want to have some way of seeing how 
-- I am getting on in the game whilst also keeping an eye on the time limitation
+- As a user, I want to have a system of tracking my progress whilst also keeping an eye on the time limitation.
 - As a user, I want to be able to access the game on all platforms.
-- As a user I want to be able to contribute to the local leader-board as to challenge me and get myself more focused on getting better.
-- As a user I want to hear the game sounds that accompany each click of a card ,match of a pair or incorrect match of a pair as I play the game.
+- As a user I want to be able to contribute to the local leader-board as to challenge me and get myself more focused on improving.
+- As a user I want to hear the game sounds that accompany each click of a card , match of a pair or incorrect match of a pair as I play the game.
 - As an owner I want to facilitate the overall needs of the user.
 - As an owner I want to provide a local storage system as to entice the user to come back and to try and bea their current high score.
 - As an owner I want to present the website in a very clear manner with un-ambigious colours as to not be presenting the potential user with colour overload or a website that just doesn't make sense design-wise.
@@ -71,20 +73,13 @@ Upon going through the next stage of the course which deals with backend platfor
 - JavaScript
 - jQuery
 
-### Resources
-
--The CDNfonts website was utilised for the Nintendo styled lettering for the game.
--Pinterest was used for the the character icons for the matching element of the game.
--Unsplash for the nintendo logo placed on the back of each card.
--Gitpod was used as the IDE workspace which allowed me to construct the website and Git was used for version control and to Push code to GitHub.
--Balsamiq was used to convey wireframes upon which to make my ideas.
--Font awesome was used for the star ratings to signify how well the player/user was doing at any given stage throughout the game.
-
 ## Testing
 ### Manual Testing
 As with all javaScript projects, correct use of the console.log() function is pivotal to self testing of different functions throughout the span of the project. By logging a handwritten message into a function I was able to immediately see if functions were being recognised in the DOM. 
 
 - JSHint was also used as a means of automating the testing of all the code, to validate and ensure that all javascript conventions were being thoroughly followed throughout the project lifespan.
+
+- The HTML and CSS files were passed through the code validator [W3C](https://validator.w3.org/).
 
 ## Bugs
 
@@ -100,8 +95,23 @@ Upon testing the website on different devices it became apparent that there was 
 
 Ofcourse, this was not ideal. However, upon looking at various articles and sites online it became apparent that this was in fact a very common issue that was occuring for many iOS users. The issue was iOS' handling of transformations and animations from browsers. The solution to this issue was recommended by my mentor through using the site [AutoPrefixer](https://autoprefixer.github.io/). The site was able to parse through the code and added any vendor prefixes as required for different operating systems. 
 
+## Credit
 
+### Resources
 
+#### Fonts and Images
+-The CDNfonts website was utilised for the Nintendo styled lettering for the game.
+-Pinterest was used for the the character icons for the matching element of the game.
+-Unsplash for the nintendo logo placed on the back of each card.
+-Balsamiq was used to convey wireframes upon which to make my ideas.
+-Font awesome was used for the star ratings to signify how well the player/user was doing at any given stage throughout the game.
 
+#### IDE
+-Gitpod was used as the IDE workspace which allowed me to construct the website and Git was used for version control and to Push code to GitHub.
 
+### Acknowledgements
+
+I'd like to place on record my sincere thanks to my mentor Cans Succulu. Cans was always on hand for any issue I had with the project and I am very grateful for his efforts and insight into how I could improve the overall functioning and look of the game.
+
+I'd also like to thank the wider Code Institute community through the slack channel for any queries I had throughout my time on the project.
  
