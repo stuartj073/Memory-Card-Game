@@ -17,7 +17,6 @@ let firstCard;
 let secondCard;
 let lock = false;
 let matchedCards = 0;
-let flips;
 let timeRemaining;
 let randN;
   
@@ -86,12 +85,14 @@ function togglePlay() {
 gameMusic.onplaying = function() {
   isPlaying = true;
   sound.innerText = "SOUND ON";
+  sound.style.color = "green";
 };
 
 // when the music is switched off
 gameMusic.onpause = function() {
   isPlaying = false;
   sound.innerText = "SOUND OFF";
+  sound.style.color = "red";
 };
 
 function unFlipCards() {
