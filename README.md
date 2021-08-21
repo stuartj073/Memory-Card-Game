@@ -1,5 +1,5 @@
 # Memory Mario
-(screenshots/amiresponsive.png)
+![Am I Responsive Images](screenshots/amiresponsive.png)
 
 Memory Mario is a memory card game set up to transport user's to a world already familiar or one that was familiar a long time ago. Using the main characters from Super Mario and Super Smash bro's, the user's must match up the correct characters with each other in order to complete the game in the specified time parameter. The game has in itself a local storage system that allows each individual player to challenge their high score upon each return to the site. The game music and sounds are all included as to add to the feel of a retro nintendo styled game. 
 
