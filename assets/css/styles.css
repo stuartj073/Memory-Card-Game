@@ -370,7 +370,7 @@ button {
     display: none;
 }
 
-#restart {
+.restart {
     font-size: 4rem;
     text-align: center;
     display:block;
