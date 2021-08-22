@@ -74,6 +74,18 @@ Upon going through the next stage of the course which deals with backend platfor
 - JavaScript
 - jQuery
 
+### Resources
+
+#### Fonts and Images
+-The CDNfonts website was utilised for the Nintendo styled lettering for the game.
+-Pinterest was used for the the character icons for the matching element of the game.
+-Unsplash for the nintendo logo placed on the back of each card.
+-Balsamiq was used to convey wireframes upon which to make my ideas.
+-Font awesome was used for the star ratings to signify how well the player/user was doing at any given stage throughout the game.
+
+#### IDE
+-Gitpod was used as the IDE workspace which allowed me to construct the website and Git was used for version control and to Push code to GitHub.
+
 ## Testing
 ### Manual Testing
 
@@ -141,18 +153,6 @@ Throughout the project I aimed to keep consistent commit messages throughout the
 Another issue that may have been noticed upon looking through my commits is the constant chopping and changing of the time count for the game. This was only done as to check if the two overlays (game over and victory) were working as designed. I just wanted to make note of that here as I didn't do so throughout any of the commits I carried out. 
 
 ## Credit
-
-### Resources
-
-#### Fonts and Images
--The CDNfonts website was utilised for the Nintendo styled lettering for the game.
--Pinterest was used for the the character icons for the matching element of the game.
--Unsplash for the nintendo logo placed on the back of each card.
--Balsamiq was used to convey wireframes upon which to make my ideas.
--Font awesome was used for the star ratings to signify how well the player/user was doing at any given stage throughout the game.
-
-#### IDE
--Gitpod was used as the IDE workspace which allowed me to construct the website and Git was used for version control and to Push code to GitHub.
 
 ### Acknowledgements
 
