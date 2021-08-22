@@ -82,7 +82,7 @@ let isPlaying = false;
 
 function togglePlay() {
     // if true then pause, if not then play
-  isPlaying ? gameMusic.pause() : gameMusic.play();
+  return isPlaying ? gameMusic.pause() : gameMusic.play();
 }
 
 // when the music is turned on
