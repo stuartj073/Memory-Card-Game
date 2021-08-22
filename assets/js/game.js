@@ -46,6 +46,7 @@ if(document.readyState === "loading") {
 function ready() {
     // set to default parameters for game start
     // default settings
+    playButton.style.background = "white";
     totalTime.innerHTML = startTime;
     gamerScore.innerHTML = 0;
     flips.innerHTML = 0;
@@ -63,6 +64,7 @@ function ready() {
 
 function startGame(){
     playButton.removeEventListener('click', startGame, false);
+    playButton.style.backgroundColor = "#777777";
     // allow the user a few seconds before
     // game start
     setTimeout(()=>{
