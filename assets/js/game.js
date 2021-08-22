@@ -11,6 +11,7 @@ const highScore = document.getElementById('top-score');
 const startTime = totalTime.innerHTML;
 const sound = document.getElementById('sound');
 const playButton = document.getElementById('play');
+const flips = document.getElementById('flips');
 
 // variables
 let firstCard;
@@ -19,7 +20,8 @@ let lock = false;
 let matchedCards = 0;
 let timeRemaining;
 let randN;
-let flips;
+let flippedCard = false;
+
   
 
 
@@ -118,20 +120,6 @@ function timer(){
     }
 }
 
-function flipCount(){
-    // if lock is true then the user
-    // should not be allowed to flip 
-    if (lock) return;
-    
-    // attach flip count to all cards in the array
-    let cards = Array.from(document.getElementsByClassName('card'));
-        for(let i=0;i<cards.length;i++){
-        cards[i].addEventListener('click', ()=>{
-            flips.innerText++;
-        });
-    }
-}
- 
 function shuffleCards(){
     // assigning a random number to each card
     // and then sorting the cards in order
@@ -143,10 +131,6 @@ function shuffleCards(){
     }
 }
  
-
-
-let flippedCard = false;
-
 function flipCard(){
     // "flip" cards by adding the flipC
     // class to each card that is 'clicked'
@@ -163,7 +147,7 @@ function flipCard(){
         // first card
         flippedCard = true;
         firstCard = this;
-        firstCard.removeEventListener('click', flipCount);
+        
         
     } else {
         // second card
