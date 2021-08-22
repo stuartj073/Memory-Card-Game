@@ -192,7 +192,7 @@ h2 {
 }
 
 .game-titles #play:active {
-    transform:scale(.95);
+    transform: scale(.95);
 }
 
 #sound {
@@ -442,7 +442,7 @@ h2 {
     }
 }
 
-@media only screen and (max-width:380px){
+@media only screen and (max-width:320px){
     .card {
         height:60px;
         width:60px;
