@@ -204,12 +204,6 @@ h2 {
     cursor: pointer;
 }
 
-.game-titles i  {
-    font-weight:500;
-    font-size:3rem;
-    color:black;
-}
-
 #volume {
     font-weight:400;
     color:black;
@@ -226,12 +220,6 @@ h2 {
             justify-content: center;
     -webkit-perspective:2000px;
             perspective:2000px;
-}
-
-.card-back {
-    background-color:black;
-    height:160px;
-    width:110px;
 }
 
 .card {
@@ -312,7 +300,6 @@ h2 {
     text-align: center;
     display:block;
     justify-content: center;
-
 }
 
 .overlay-text.visible {
