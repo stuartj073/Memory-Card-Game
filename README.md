@@ -3,7 +3,7 @@
 
 Memory Mario is a memory card game set up to transport user's to a world already familiar or one that was familiar a long time ago. Using the main characters from Super Mario and Super Smash bro's, the user's must match up the correct characters with each other in order to complete the game in the specified time parameter. The game has in itself a local storage system that allows each individual player to challenge their high score upon each return to the site. The game music and sounds are all included as to add to the feel of a retro nintendo styled game. 
 
-If you would like to visit the site and try out the game for yourself, feel free to do so by clicking this [link].(https://stuartj073.github.io/Memory-Card-Game/index.html)
+If you would like to visit the site and try out the game for yourself, feel free to do so by clicking this [link](https://stuartj073.github.io/Memory-Card-Game/index.html).
 
 
 ## User Stories
@@ -120,12 +120,12 @@ A simple way of fixing this issue is to literally lock the board. In doing so we
 
 ### iOS devices
 
-Upon testing the website on different devices it became apparent that there was an issue with apple devices (iOS software based devices). When the user was attempting to play the game and flip each card, the cards would either glitch in and out of their front and back classes, or the cards would simply flip over revealing an empty card. To get a better understanding of the issue at hand, please see the video attached. [video](https://drive.google.com/file/d/1x20q8UN-MaX6J3W4EFh7cG296om9MLEU/view?usp=sharing).
+Upon testing the website on different devices it became apparent that there was an issue with apple devices (iOS software based devices). When the user was attempting to play the game and flip each card, the cards would either glitch in and out of their front and back classes, or the cards would simply flip over revealing an empty card. To get a better understanding of the issue at hand, please see the video attached -  [video](https://drive.google.com/file/d/1x20q8UN-MaX6J3W4EFh7cG296om9MLEU/view?usp=sharing).
 
 Ofcourse, this was not ideal. However, upon looking at various articles and sites online it became apparent that this was in fact a very common issue that was occuring for many iOS users. The issue was iOS' handling of transformations and animations from browsers. The solution to this issue was recommended by my mentor through using the site [AutoPrefixer](https://autoprefixer.github.io/). The site was able to parse through the code and added any vendor prefixes as required for different operating systems. 
 
 ### Favicon error
-An error that continued to come up in the console was an issue with favicon of the website. Upon searching on various different sites such as ![stack overflow](https://stackoverflow.com/) I came to the realisation that the error was showing up due to a netbeans issue and that to remove the error I simply had to include a small link in the head of each html file (as noted in each file).
+An error that continued to come up in the console was an issue with favicon of the website. Upon searching on various different sites such as [stack overflow](https://stackoverflow.com/) I came to the realisation that the error was showing up due to a netbeans issue and that to remove the error I simply had to include a small link in the head of each html file (as noted in each file).
 
 ## Deployment
 To Deploy the project
